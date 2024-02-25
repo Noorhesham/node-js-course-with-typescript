@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .active{@apply text-pink-400 transition-all duration-75 relative before:absolute before:-bottom-1
+  before:left-0 before:h-[.2rem] before:w-full before:bg-pink-600 before:transition-all before:duration-200 }
+}
+:root {
+
+}
+.sticky{
+position: sticky;
+top: 0;
+
+}
+img{
+  user-select: none;
+}
+html{
+  font-size: 62.5%;
+  font-family: serif;
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+
+}
+
+.mountains{
+  background-image: url("/mountains.png");
+  background-size: cover;
+  background-position: bottom;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+.planets{
+  background-image: url("/planets.png");
+  background-size: cover;
+  background-position: bottom;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+
+}
+.stars{
+  
+  background-image: url("/stars.png");
+  background-size: cover;
+  background-position: bottom;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+svg{
+  z-index: -1;
+}
