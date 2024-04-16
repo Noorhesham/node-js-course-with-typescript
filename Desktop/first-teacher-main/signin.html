@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>signin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Noto+Nastaliq+Urdu&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/43296d6011.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <script src="/index.js" defer></script>
+  </head>
+  <body>
+    <nav id="navbar" class="py-4 z-50 w-full fixed top-0 left-0 text-lg px-10 md:px-32 duration-150">
+      <ul class="text-left flex-row-reverse flex text-xl md:text-3xl justify-between items-center">
+        <li>لوجو</li>
+        <div class="flex items-center gap-5">
+          <a
+            href="signup.html"
+            class="py-2 px-4 flex items-center gap-2 text-sm md:text-lg bg-yellow-600 rounded-lg shadow-md text-gray-100 hover:bg-transparent border-2 border-yellow-600 hover:text-yellow-600 duration-200"
+          >
+            ! أنشئ حساب <i class="fa-solid fa-plus"></i>
+          </a>
+        </div>
+      </ul>
+    </nav>
+    <main class="flex mt-20 items-center gap-10 justify-end">
+      <section class="flex flex-col items-end text-right gap-10">
+        <h1 class="text-4xl"><span class="text-yellow-500">تسجيل </span> الدخول</h1>
+        <p class="text-gray-400">ادخل علي حسابك بإدخال رقم الهاتف و كلمة المرور المسجل بهم من قبل</p>
+        <form class="flex w-full px-4 py-8 flex-col gap-7" action="#">
+          <div class="input-container">
+            <label class="label flex items-center gap-2" for="email">ايميل <i class="fa-solid fa-envelope"></i></label>
+            <input type="email" id="email" class="input-field focus:bg-yellow-50" />
+          </div>
+          <div class="flex flex-col input-container">
+            <label class="label flex items-center gap-2" for="password"
+              >الباسورد <i class="fa-solid fa-lock"></i
+            ></label>
+            <input class="input-field focus:bg-yellow-50" type="password" id="password" />
+          </div>
+
+          <button
+            class="self-end w-fit py-2 px-4 rounded-lg text-gray-100 bg-yellow-500 hover:bg-yellow-400 duration-200"
+            type="submit"
+          >
+            تسجيل الدخول
+          </button>
+        </form>
+        <p>
+          ليس لديك حساب ؟ <a class="text-yellow-400 hover:text-yellow-300 duration-150" href="signup.html">انشئ الان</a>
+        </p>
+      </section>
+      <section>
+        <img src="/38f0706c-a017-40d8-996e-72b5f6647a4d-ai.png" class=" hidden md:block md:w-[40rem]" alt="" />
+      </section>
+    </main>
+  </body>
+</html>

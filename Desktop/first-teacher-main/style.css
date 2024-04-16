@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Changa", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+body::selection {
+  background-color: black;
+  color: white; 
+}
+.main {
+  background-image: url("/81805.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main2 {
+  background-image: url("/25.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+.noto-nastaliq {
+  font-family: "Noto Nastaliq Urdu", serif;
+  word-spacing: 10px;
+}
+.changa {
+  font-family: "Changa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 10s linear infinite; /* Change the duration here */
+}
+
+.title:after {
+  content: "";
+  width: 86%;
+  height: 5rem;
+  z-index: -1;
+  background-color: rgb(242, 228, 26);
+  position: absolute;
+  right: 0;
+  bottom: -43%;
+  transform: skewX(-20deg);   
+}
+.scrolled {
+  transition: all .5s;
+  background-color: rgba(255, 255, 255, 0.733); 
+  border-bottom: 5px rgb(242, 228, 26) solid;
+}
+
+.cardd:hover img{
+  transform:translateY(-10px);
+  opacity: .8;
+  transition: transform 1s ease, all  ease;
+}
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: #999;
+  text-align: right;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  transition: all 0.3s ease;
+  outline: none;
+  text-align: right;
+}
+.select-field {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  transition: all 0.3s ease;
+  outline: none;
+  text-align: right;
+}
+
+.input-field:focus,
+.input-field.has-content {
+    border-bottom: 2px rgb(255, 223, 11) solid;
+    border-radius: 5px;
+
+}
+.input-field:focus + .label,
+.input-field.has-content + .label {
+    top: 10px;
+    font-size: 12px;
+    color: #333;
+}
+.focused{
+  position: absolute;
+  top:-17px;
+  right: 0;
+  color:rgb(255, 223, 11);
+}
