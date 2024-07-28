@@ -1,0 +1,302 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: rgba(255, 255, 255, 0.87);
+  background-color:#141414;
+  --color-primary:#b71405;
+  --color-primary-light:#fd8e8e;
+  --color-primary-dark:#a70b06;
+  
+}
+
+body {
+  margin: 0;
+  font-size: 62.5%;
+  overflow-x: hidden;
+  max-width:100%;
+}
+.active {
+  color: rgb(235, 29, 29);
+  font-weight: 700;
+  pointer-events: none;
+  transition: all 0.5s;
+}
+
+.nfLoader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: 37px 0 0 -25px;
+  width: 50px;
+  height: 50px;
+}
+.nfLoader:after {
+  content: "";
+  background-image: url(https://assets.nflxext.com/en_us/pages/wiplayer/site-spinner.png);
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  position: absolute;
+  margin: -6px;
+  width: inherit;
+  height: inherit;
+  animation: nfLoader-spin 1.1s linear infinite, 1 !important;
+  -webkit-animation: nfLoader-spin 1.1s linear infinite, 1 !important;
+}
+@keyframes nfLoader-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes nfLoader-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+::-webkit-search-cancel-button {
+  display: none;
+}
+.swiper {
+  padding: 10px;
+  overflow: visible;
+  @media (max-width: 1250px){
+    overflow: hidden;
+    max-width:100%;
+  }
+  
+}
+.swiper-slide {
+  background-position: center !important;
+  background-size: cover !important;
+  width: 9rem !important;
+}
+.swiper-slide-active{
+  background-position: center !important;
+  background-size: cover !important;
+  width: 9rem !important;
+}
+.swiper-slide-big {
+  background-position: center !important;
+  background-size: cover !important;
+  width: 45rem !important;
+  height: max-content !important;
+}
+.swiper-max{
+  padding:0 5rem 5rem 5rem !important;
+  width:100%!important;
+  min-height: 100% !important;
+  @media (max-width: 1250px){
+    padding: 0 !important; 
+  }
+  
+}
+.swiper-card {
+  width: fit-content !important;
+  @media (max-width: 730px){
+    width: 100% !important;
+    height: fit-content !important;
+    overflow: hidden !important;
+  }
+}
+.video-card{
+  width: 50% !important;
+  @media (max-width: 1250px){
+    width: 100% !important;
+  }
+}
+.movieSwiper {
+  user-select: none;
+  margin-top: -5rem;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+  @media (max-width: 1250px){
+  overflow: hidden !important;
+  max-width: 100% !important;
+  }
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+.swiper-pagination-bullet {
+  background-color: rgb(198, 19, 19);
+
+}
+.swiper-pagination{
+  /* @media (max-width: 1250px){
+    overflow: hidden;
+    left: 0 !important;
+    width: fit-content !important;
+    } */
+
+}
+.swiper-button-next {
+  z-index: 99999999999999999999999999;
+  width: max-content ;
+  padding: 1rem 1.6rem;
+  box-shadow: 0px 28px 35px rgba(0, 0, 0, 0.7);
+  top: 50%;
+  right: 0 !important;
+  height: max-content;
+  background-color: #00000073;
+  border-radius: .5rem;
+  border: whitesmoke 2px solid;
+  color: white;
+  box-shadow: #141414;
+  @media (max-width: 1250px){
+    padding: 1.4rem; 
+    top:  40%!important;
+    right: 2% !important;
+    width: 2rem !important;
+    @media (max-width: 750px){
+      padding: 1.4rem; 
+      top:  50%!important;
+      right: 2% !important;
+      width: 2rem !important;
+    }
+  }
+}
+.swiper-button-next::before{
+  content: '';
+  width: 20rem;
+  height: 13rem;
+  position: absolute;
+  background-color: transparent;
+}
+.swiper-button-next:hover{
+ color: rgb(198, 19, 19);;
+ transition: all .3s;
+}
+.swiper-button-prev:hover{
+  color: rgb(198, 19, 19);;
+  transition: all .3s;
+ }
+.swiper-button-prev {
+  z-index: 99999999999999999999;
+  width: max-content;
+  padding: 1rem 1.6rem;
+  top: 50%;
+  right: -2rem;
+  height: max-content;
+  background-color: #00000073;
+  box-shadow: 0px 28px 35px rgba(0, 0, 0, 0.7);
+  border-radius: .5rem;
+  border: whitesmoke 2px solid;
+  color: white;
+  @media (max-width: 1250px){
+    padding: 1.4rem; 
+    top:  40%!important;
+    right: 2% !important;
+    width: 2rem !important;
+    @media (max-width: 750px){
+      padding: 1.4rem; 
+      top:  50%!important;
+      right: 2% !important;
+      width: 2rem !important;
+    }
+  }
+}
+.swiper-button-prev::before{
+  content: '';
+  width: 20rem;
+  height: 13rem;
+  position: absolute;
+  background-color: transparent;
+}
+.is-sticky{
+  background-color: black!important;
+}
+.skeleton{
+  animation: skeleton infinite 1s ease alternate;
+}
+@keyframes skeleton {
+  to{
+    opacity: .5;
+  }
+  
+}
+.clip{
+  clip-path: polygon(0 2%, 100% 0, 100% 84%, 0% 100%);
+}
+::-webkit-scrollbar{
+  transition: .3s all;
+  height: .8rem;
+  width: .5rem;
+}
+
+body::-webkit-scrollbar-thumb{
+  transition: .3s all;
+  border-radius: 13rem;
+  background-color: var(--color-primary);
+}
+body::-webkit-scrollbar-thumb:active{
+  background-color: var(--color-primary-dark);
+}
+::-webkit-scrollbar-thumb:horizontal{
+  transition: .3s all;
+  height: .4rem;
+  border-radius: 13rem;
+  background-color: var(--color-primary-light);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark); 
+}
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.button:hover {
+  background-color: #c92727;
+  box-shadow: 0px 15px 20px rgba(229, 61, 46, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+.mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+.one:before {
+  content: '';
+  position: absolute;
+  top: -57px;
+  right: -57px;
+  width: 113px;
+  height: 113px;
+  transform: rotate(45deg);
+  background: white;
+  display: inline-block;
+}
+
+.custom-position {
+  object-position: 60% -3px;
+}
+
+.logo{
+width: 15%;
+aspect-ratio: 3/2;
+object-fit: contain;
+mix-blend-mode: color-burn;
+ 
+}
