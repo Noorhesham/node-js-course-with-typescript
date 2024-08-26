@@ -1,0 +1,17 @@
+{
+  "HomePage": {
+    "title": "Hello world!"
+  },
+  "languageSwitcher": {
+    "selectLanguage": "عربي"
+  },
+  "navbar": {
+    "home": "الرئيسية",
+    "about us": "من نحن",
+    "contact us": "اتصل بنا",
+    "shop now": "تسوق الان",
+    "products": "المنتجات",
+    "get inspired": "احصل علي الالهام",
+    "become partener": "انضم الينا"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "HomePage": {
+    "title": "Hello world!"
+  },
+  "languageSwitcher": {
+    "selectLanguage": "English"
+  },
+  "navbar": {
+    "home": "Home",
+    "about us": "About",
+    "contact us": "Contact Us",
+    "shop now": "Shop Now",
+    "products": "Products",
+    "get inspired": "Get Inspired",
+    "become partener": "Become Parteners"
+  },
+  "footer": {
+    "aboutus": "ABOUT US",
+    "contactus": "CONTACT US",
+    "ourblog": "OUR BLOG",
+    "pricing": "PRICING & PRICELIST",
+    "solutions": "OUR SOLUTIONS",
+    "agree": "USER AGREEMENT",
+    "testimonials": "TESTIMONIALS",
+    "jobs": "JOBS BY FIELD",
+    "senior": "Senior Care Doctor in the South",
+    "jr": "Junior doctor assistant in Mecca",
+    "predicate": "Senior Pediatric nurse in Riyadh",
+    "fresh": "Fresh Operations Nurse in Mecca",
+    "mad": "Junior Pediatric Nurse in AL Madinah",
+    "copyright": "Copyright © 2024 Dr Nurse .Design by Right Mind"
+  },
+  "contact": {
+    "title": "CONTACT INFO",
+    "description": "you can contact us anytime via email or phone.",
+    "book": "LEARN ANOUT OUR MOST IMPORTANT",
+    "branches": "BRANCHES AND DISTRIBUTERS",
+    "contact": "SOCIAL MEDIA",
+    "question": "DO YOU HAVE ANY QUESTIONS ?",
+    "send": "SEND MESSAGE",
+    "contactDescription": "CONNECT WITH US VIA SOCAIL MEDIA"
+  },
+  "Submit": "CONFIRM",
+  "cancel": "CANCEL",
+  "forms": {
+    "message": "YOUR MESSAGE / NOTE",
+    "rate": "YOUR PRODUCT RATING",
+    "email": "EMAIL ADDRESS",
+    "phone": "PHONE NUMBER",
+    "name": "YOUR NAME",
+    "inquiry": "YOUR INQUIRY"
+  },
+  "andEdit": "and edit your",
+  "password": "Password",
+  "and": "and",
+  "accountDetails": "Account Details",
+  "email": "ENTER YOUR EMAIL",
+  "name": "ENTER YOUR NAME",
+  "birth_day": "ENTER YOUR BIRTHDAY",
+  "avatar": " UPLOAD YOUR AVATAR",
+  "updatePhone": "UPDATE YOUR PHONE",
+  "updateEmail": "UPDATE YOUR EMAIL",
+  "updatePassword": "UPDATE YOUR PASSWORD",
+  "personalInfo": "PERSONAL INFORMATION",
+  "personalDetails": "CONFIGURE CUSTOM SETTINGS",
+  "updatePersonalInfo": "UPDATE PERSONAL INFORMATION",
+  "settings": "SETTINGS",
+  "delete": "CONFIRM DELETE",
+  "validation": "VALIDATION CODE",
+  "resend_code": "SEND CODE AGAIN",
+  "close": "CLOSE",
+  "loginWithPhone": "BY PHONE",
+  "loginWithEmail": "BY EMAIL",
+  "dontHaveAccount": "NOT REGISTERED YET?",
+  "createAccount": "CREATE AN ACCOUNT",
+  "forgotPassword": "FORGOT YOUR PASSWORD?",
+  "orSign": "OR SIGN IN WITH",
+  "login": "LOGIN TO YOUR ACCOUNT"
+}
