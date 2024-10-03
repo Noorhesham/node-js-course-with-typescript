@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "aboutus": "About Us",
+    "contactus": " Contact Us",
+    "home": "Home",
+    "courses": "Courses"
+  },
+
+  "heroHead": "Welcome to Our Training Platform",
+  "heroDescription": "Discover the best courses to advance your career.",
+  "searchPlaceholder": "Find your training course",
+  "featureAboutUsTitle": "About Us",
+  "featureAboutUsDescription": "We will help you find the right training course and build a successful career.",
+  "featureCoursesTitle": "Our Courses",
+  "featureCoursesDescription": "We offer a wide range of courses to help you excel in your profession.",
+  "featureGlobalReachTitle": "Global Reach",
+  "featureGlobalReachDescription": "Join our community from anywhere in the world.",
+  "valuePropositionTitle": "Value Proposition",
+  "valuePropositionText": "At High Point Training Center, we are not just educators — we are partners in your success. Our passion lies in cultivating talent...",
+  "whyChooseTitle": "Why High Point Training Center?",
+  "whyChooseText": "Industry-Leading Instructors, Customized Training Solutions...",
+  "continue": "Continue",
+  "features": {
+    "expertInstructors": "Expert Instructors",
+    "expertInstructorsdesc": "Learn from industry-leading professionals with real-world experience.",
+    "customSolutions": "Custom Solutions",
+    "customSolutionsdesc": "Tailored training programs that meet your unique organizational needs.",
+    "innovativeLearning": "Innovative Learning",
+    "innovativeLearningdesc": "Engaging and interactive training methods that enhance retention and application.",
+    "flexibleDelivery": "Flexible Delivery",
+    "flexibleDeliverydesc": "Choose from various delivery formats that suit your schedule.",
+    "resultsOriented": "Results-Oriented Approach",
+    "resultsOrienteddesc": "Our training is designed to deliver measurable outcomes that drive success."
+  },
+  "Carousel": {
+    "title": "Explore Business Insights",
+    "businessTitle1": "Strategize for Success",
+    "marketingTitle": "Master Marketing Tactics",
+    "leadershipTitle": "Develop Leadership Skills",
+    "financeTitle": "Understand Finance Fundamentals",
+    "entrepreneurshipTitle": "Build Your Business Empire"
+  },
+  "DummyContent": {
+    "businessContent": {
+      "headline": "Unlock Business Potential",
+      "description": "Discover innovative strategies that drive organizational growth and efficiency."
+    },
+    "marketingContent": {
+      "headline": "Elevate Your Marketing Game",
+      "description": "Learn cutting-edge marketing techniques to enhance brand awareness and customer engagement."
+    },
+    "leadershipContent": {
+      "headline": "Inspire Through Leadership",
+      "description": "Develop essential leadership skills that motivate teams and foster a culture of excellence."
+    },
+    "financeContent": {
+      "headline": "Navigate Financial Landscapes",
+      "description": "Acquire the financial knowledge necessary to make informed strategic decisions and maximize resources."
+    },
+    "entrepreneurshipContent": {
+      "headline": "Innovate and Excel",
+      "description": "Cultivate an entrepreneurial mindset to turn ideas into impactful business ventures."
+    }
+  },
+  "contact": {
+    "headline": "Get in Touch with EndPoint Team Easily",
+    "subText": "Let us know how we can assist you",
+    "salesTitle": "Chat with Sales",
+    "salesDescription": "Speak to our friendly team",
+    "visitTitle": "Visit Us",
+    "visitDescription": "Our office is always open for you",
+    "emailTitle": "Email Us",
+    "emailDescription": "Send us a quick email",
+    "phoneTitle": "Call Us",
+    "phoneDescription": "Reach us by phone anytime"
+  }
+}

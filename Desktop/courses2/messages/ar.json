@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "aboutus": "من نحن ؟",
+    "contactus": "اتصل بنا",
+    "home": "الرئيسية",
+    "courses": "الدورات"
+  },
+
+  "heroHead": "مرحبًا بك في منصتنا التدريبية",
+  "heroDescription": "اكتشف أفضل الدورات لتطوير مسارك المهني.",
+  "searchPlaceholder": "ابحث عن دورتك التدريبية",
+  "featureAboutUsTitle": "من نحن",
+  "featureAboutUsDescription": "سنساعدك في العثور على الدورة التدريبية المناسبة وبناء مسيرة مهنية ناجحة.",
+  "featureCoursesTitle": "دوراتنا",
+  "featureCoursesDescription": "نقدم مجموعة واسعة من الدورات لمساعدتك على التفوق في مجالك.",
+  "featureGlobalReachTitle": "انتشار عالمي",
+  "featureGlobalReachDescription": "انضم إلى مجتمعنا من أي مكان في العالم.",
+  "valuePropositionTitle": "عرض القيمة",
+  "valuePropositionText": "في مركز هايبوانت للتدريب، نحن لا نقدم التعليم فقط — نحن شركاء في نجاحكم. شغفنا يكمن في تطوير المواهب...",
+  "whyChooseTitle": "لماذا مركز هايبوانت للتدريب؟",
+  "whyChooseText": "مدربون رواد في الصناعة، حلول تدريبية مخصصة...",
+  "features": {
+    "expertInstructors": "مدربون خبراء",
+    "expertInstructorsdesc": "تعلم من محترفين رائدين في الصناعة ذوي خبرة عملية.",
+    "customSolutions": "حلول مخصصة",
+    "customSolutionsdesc": "برامج تدريب مصممة خصيصًا لتلبية احتياجات مؤسستك الفريدة.",
+    "innovativeLearning": "تعلم مبتكر",
+    "innovativeLearningdesc": "طرق تدريب تفاعلية وجذابة تعزز من الاحتفاظ والتطبيق.",
+    "flexibleDelivery": "تسليم مرن",
+    "flexibleDeliverydesc": "اختر من بين تنسيقات تسليم متنوعة تناسب جدولك.",
+    "resultsOriented": "نهج موجه نحو النتائج",
+    "resultsOrienteddesc": "تم تصميم تدريبنا لتقديم نتائج قابلة للقياس تعزز النجاح."
+  },
+  "Carousel": {
+    "title": "ماذا سنقدم لك ؟  ",
+    "businessTitle1": "استراتيجيات النجاح",
+    "marketingTitle": "إتقان استراتيجيات التسويق",
+    "leadershipTitle": "تطوير مهارات القيادة",
+    "financeTitle": "فهم أساسيات المالية",
+    "entrepreneurshipTitle": "بناء إمبراطورية أعمالك"
+  },
+  "DummyContent": {
+    "businessContent": {
+      "headline": "افتح إمكانيات الأعمال",
+      "description": "اكتشف استراتيجيات مبتكرة تعزز نمو المؤسسات وكفاءتها."
+    },
+    "marketingContent": {
+      "headline": "ارفع مستوى تسويقك",
+      "description": "تعلم تقنيات تسويقية متطورة لتعزيز الوعي بالعلامة التجارية وتفاعل العملاء."
+    },
+    "leadershipContent": {
+      "headline": "الالهام من خلال القيادة",
+      "description": "طور مهارات القيادة الأساسية التي تحفز الفرق وتدعم ثقافة التميز."
+    },
+    "financeContent": {
+      "headline": "التنقل في المشهد المالي",
+      "description": "احصل على المعرفة المالية اللازمة لاتخاذ قرارات استراتيجية مستنيرة وتعظيم الموارد."
+    },
+    "entrepreneurshipContent": {
+      "headline": "ابتكر وتفوق",
+      "description": "ازرع عقلية ريادة الأعمال لتحويل الأفكار إلى مشاريع تجارية مؤثرة."
+    }
+  },
+  "contact": {
+    "headline": "تواصل مع فريق إند بوينت بسهولة",
+    "subText": "أخبرنا كيف يمكننا مساعدتك",
+    "salesTitle": "الدردشة مع المبيعات",
+    "salesDescription": "تحدث مع فريقنا الودود",
+    "visitTitle": "قم بزيارتنا",
+    "visitDescription": "مكتبنا مفتوح دائمًا لك",
+    "emailTitle": "أرسل لنا بريدًا إلكترونيًا",
+    "emailDescription": "أرسل لنا بريدًا إلكترونيًا سريعًا",
+    "phoneTitle": "اتصل بنا",
+    "phoneDescription": "يمكنك الاتصال بنا في أي وقت"
+  }
+}

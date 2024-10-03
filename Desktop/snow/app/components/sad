@@ -1,0 +1,251 @@
+"use client";
+import Image from "next/image";
+import React, { useEffect, useRef } from "react";
+import SnowBullets from "./SnowBullets";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const Snow = () => {
+  const container = useRef<null | any>(null);
+  useEffect(() => {
+    const tl = gsap.timeline({});
+  }, []);
+  return (
+    <section
+      ref={container}
+      style={{
+        overflow: "hidden",
+        backgroundAttachment: "fixed",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundImage: "url('/bg.png')",
+      }}
+      className=" h-screen section snowbg z-0   relative w-full"
+    >
+      <SnowBullets />
+      <div className=" bottom-0 ground absolute h-full w-full  z-10">
+        <Image src="/ground.png" className=" object-cover w-full h-full" alt="ground" fill />
+      </div>
+      <div className="home opacity-0 bottom-20 left-0 ground absolute aspect-square h-[35rem] w-[35rem]  z-10">
+        <Image src="/home.png" className=" object-cover w-full h-full" alt="ground" fill />
+      </div>
+      <div className="noor opacity-0 bottom-20 right-20  absolute aspect-square rounded-full overflow-hidden h-96 w-96  z-10">
+        <Image src="/noor.jpg" className=" object-cover w-full h-full" alt="ground" fill />
+      </div>
+      <div className="tree opacity-0 -bottom-4 right-16  absolute aspect-square rounded-full overflow-hidden h-96 w-96  z-10">
+        <Image src="/tree1.png" className=" object-cover w-full h-full" alt="ground" fill />
+      </div>
+      <div className="tree opacity-0 bottom-20 left-1/2  absolute aspect-square rounded-full overflow-hidden h-96 w-96  z-10">
+        <Image src="/tree2.png" className=" object-cover w-full h-full" alt="ground" fill />
+      </div>
+    </section>
+  );
+};
+
+export default Snow;
+// "use client";
+// import React, { useEffect, useRef } from "react";
+// import useLocoScroll from "../hooks/useLocoScroll";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/all";
+// import { useGSAP } from "@gsap/react";
+// import Lines from "./Lines";
+// import Image from "next/image";
+// import Snow from "./Snow";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const Intro = () => {
+//   const [scroll, setScroll] = React.useState(false);
+//   useLocoScroll(true);
+//   const container = useRef<null | any>(null);
+
+//   useGSAP(() => {
+//     const tl = gsap.timeline();
+//     tl.fromTo([".clip1", ".clip2"], { y: -500, stagger: 0.2, duration: 1 }, { y: 0, stagger: 0.2, duration: 1 }).fromTo(
+//       ".clip3",
+//       { y: 500 },
+//       { y: 0, duration: 1 },
+//       "<"
+//     );
+//     tl.fromTo("#lines", { y: 70 }, { y: 0, duration: 0.4 }).fromTo(
+//       ".title",
+//       {
+//         opacity: 0,
+//         y: 100,
+//         rotateX: -90,
+//         ease: "power2.inOut",
+//         stagger: 0.5,
+//         duration: 1,
+//       },
+//       {
+//         opacity: 1,
+//         y: 0,
+//         rotateX: 0,
+//         stagger: 0.5,
+//         duration: 1,
+//       }
+//     );
+//     setTimeout(() => {
+//       setScroll(true);
+//     }, 1000);
+//   }, []);
+
+//   useEffect(() => {
+//     if (!scroll) return;
+//     const sections = gsap.utils.toArray(".section");
+
+//     gsap.to(sections, {
+//       y: -100 * (sections.length - 1),
+//       ease: "none",
+//       scrollTrigger: {
+//         trigger: container.current,
+//         scroller: ".main-container",
+//         scrub: true,
+//         pin: true,
+//         start: "top top",
+//         end: () => `+=${container.current.offsetHeight - window.innerHeight}`,
+//         invalidateOnRefresh: true,
+//         anticipatePin: 1,
+//       },
+//     });
+//     // Pin the container and allow scrolling effect
+//     const tl = gsap.timeline({});
+
+//     // Apply animations for different clips
+//     tl.to(".clip1", {
+//       clipPath: "polygon(100% 17%, 0 1.6%, 0 41.6%, 100% 55%)",
+//       scrollTrigger: {
+//         trigger: ".clip1",
+//         start: "top 100px",
+//         end: "top center",
+//         scrub: 1,
+//         scroller: ".main-container",
+//         invalidateOnRefresh: true,
+//       },
+//     });
+
+//     tl.fromTo(
+//       ".char",
+//       { opacity: 0, y: 100, stagger: 0.1, ease: "power2.inOut", rotateX: -90 },
+//       { opacity: 1, y: 0, stagger: 0.1, duration: 0.7, rotateX: 0 }
+//     );
+//     const scrollTriggerClip = {
+//       trigger: ".clip1",
+//       start: "top 100px",
+//       end: "top center",
+//       scrub: 1,
+//       scroller: ".main-container",
+//       invalidateOnRefresh: true,
+//     };
+//     const tl2 = gsap.timeline({
+//       scrollTrigger: { ...scrollTriggerClip },
+//     });
+//     tl2.to(".clip2", {
+//       rotate: "180deg",
+//       top: "73px",
+//       scrollTrigger: { ...scrollTriggerClip },
+//     });
+//     tl2.to(".clip3", {
+//       width: 0,
+//       scrollTrigger: { ...scrollTriggerClip },
+//       delay: 1,
+//     });
+
+//     tl2
+//       .to(
+//         ".lines",
+//         {
+//           top: -125,
+//           scrollTrigger: { ...scrollTriggerClip },
+//         },
+//         "<"
+//       )
+//       .to(
+//         ".intro-lines__item--1",
+//         {
+//           y: 100,
+//           stagger: 0.2,
+//           scrollTrigger: { ...scrollTriggerClip },
+//         },
+//         "<"
+//       )
+//       .to(
+//         ".intro-lines__item--2",
+//         {
+//           y: -250,
+//           stagger: 0.2,
+//           scrollTrigger: { ...scrollTriggerClip },
+//         },
+//         "<"
+//       );
+//     tl2
+//       .to(".title", {
+//         opacity: 0,
+//         y: 100,
+//         rotateX: -90,
+//       })
+//       .fromTo(
+//         ".title2",
+//         {
+//           opacity: 0,
+//           y: 100,
+//           rotateX: -90,
+//         },
+//         { opacity: 1, y: 0, rotateX: 0, duration: 1 }
+//       );
+//     const scrolltrigger2 = {
+//       trigger: ".snowbg",
+//       start: "top center",
+//       end: () => "+=4000",
+//       scroller: ".main-container",
+//       invalidateOnRefresh: true,
+//       markers: true,
+//     };
+//   }, [scroll]);
+
+//   return (
+//     <main className="container  flex flex-col h-screen relative" ref={container}>
+//       <div className="w-full flex top-[20%] lg:top-0 absolute z-30 h-full">
+//         <div className="relative h-full w-1/2">
+//           <Lines id="lines" className="absolute right-[-3rem] top-0 z-30" />
+//           <div
+//             className="bg-snow6 clip3 w-[60%] h-96 lg:h-full absolute top-0"
+//             style={{ clipPath: "polygon(0 0, 100% 28%, 100% 68%, 0 43%)" }}
+//           ></div>
+//           <div
+//             className="clip1 bg-snow6 w-[40%] right-0 h-96 lg:h-full absolute top-[6rem] lg:top-48"
+//             style={{ clipPath: "polygon(100% 17%, 0 42%, 0 73%, 100% 49%)" }}
+//           ></div>
+//         </div>
+//         <div className="relative h-full w-1/2">
+//           <div
+//             className="bg-snow6 w-full h-96 clip2 lg:h-full absolute top-0"
+//             style={{ clipPath: "polygon(0 0, 100% 28%, 100% 68%, 0 43%)" }}
+//           ></div>
+//         </div>
+//       </div>
+
+//       <div className=" z-50 top-40 absolute right-10 text-5xl text-white font-bold">
+//         <h1 className=" title">Hi , I'm Noor Hesham</h1>
+//         <h1 className=" title">Mern Stack Developer</h1>
+//       </div>
+//       <div className=" z-50 top-80 absolute left-10 text-5xl text-violet-100 font-bold">
+//         <h1 className=" title2 opacity-0">Why Would You Hire Me ?</h1>
+//         <h1 className=" title2 opacity-0">Lets Swing Into My Experience</h1>
+//       </div>
+//       <section className="intro section z-10 relative w-full h-full min-w-[100vw] min-h-screen">
+//         <div className="absolute inset-0 w-full h-full">
+//           <video muted loop autoPlay className="w-full object-cover h-full">
+//             <source src="/spider.mp4" type="video/mp4" />
+//           </video>
+//         </div>
+//       </section>
+//       <Snow />
+//     </main>
+//   );
+// };
+
+// export default Intro;
