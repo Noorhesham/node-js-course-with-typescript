@@ -1,0 +1,46 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1707 1572" width="1707" height="1572">
+	<title>19Z_2102</title>
+	<defs>
+		<linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-40.392,7.058,0,1323.085,945.182)">
+			<stop offset="0" stop-color="#cddaf1"/>
+			<stop offset="1" stop-color="#ffffff"/>
+		</linearGradient>
+		<linearGradient id="g2" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-1759.998,854,0,-533.58,1713.44)">
+			<stop offset="0" stop-color="#31174a"/>
+			<stop offset=".994" stop-color="#3f487e"/>
+		</linearGradient>
+		<linearGradient id="g3" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-1759.998,854,0,-533.58,1711.957)">
+			<stop offset="0" stop-color="#455aff"/>
+			<stop offset="1" stop-color="#000000"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { opacity: .8;mix-blend-mode: multiply;fill: url(#g1) } 
+		.s1 { fill: url(#g2) } 
+		.s2 { opacity: .5;mix-blend-mode: multiply;fill: #724777 } 
+		.s3 { mix-blend-mode: soft-light;fill: #a2c4ff } 
+		.s4 { opacity: .8;mix-blend-mode: multiply;fill: #724777 } 
+		.s5 { opacity: .8;fill: #1e0f26 } 
+		.s6 { opacity: .5;mix-blend-mode: soft-light;fill: #c59281 } 
+		.s7 { mix-blend-mode: soft-light;fill: #a48181 } 
+		.s8 { mix-blend-mode: soft-light;fill: #775047 } 
+		.s9 { opacity: .3;mix-blend-mode: screen;fill: url(#g3) } 
+	</style>
+	<g id="&lt;Group&gt;">
+		<g id="&lt;Group&gt;">
+			<path id="&lt;Path&gt;" class="s0" d="m1442.2 945.2c-3.1-13.4-5.4-26.8-7.1-40.4 3.9 13.1 6.4 26.6 7.1 40.4z"/>
+			<path id="&lt;Path&gt;" class="s1" d="m853 1713.4l192.6-361.7 66.8-18 220.4-788.7 109.4-95.5 46.9 7.7-35.8-75.7 253.7-428.1v1732.8z"/>
+			<path id="&lt;Path&gt;" class="s2" d="m1453.3 381.5l180-9.5 73.7-418.6v1732.8l-761.1 24.3 308.3-25.5 72.3-303 247.2-41.2-24.9-133.3 138.4-718.2-245-39.8 46.9 7.7z"/>
+			<path id="&lt;Path&gt;" class="s3" d="m1045.6 1351.7l280.9 30.3 247.2-41.2-461.3-7.1z"/>
+			<path id="&lt;Path&gt;" class="s4" d="m1112.4 1333.7l436.4-126.2 24.9 133.3z"/>
+			<path id="&lt;Path&gt;" class="s3" d="m1332.8 545l354.4-55.7-245-39.8z"/>
+			<path id="&lt;Path&gt;" class="s3" d="m1453.3 381.5l180-9.5 73.7-418.6z"/>
+			<path id="&lt;Path&gt;" class="s5" d="m1471.1 419.1l138.1 49.9 97.8 20.3h-19.8l-198.1-32.1z"/>
+			<path id="&lt;Path&gt;" class="s5" d="m1573.7 1340.8l74 34.3 59.3 196.4-48.9-201.1-84.4-52.1-230.7 19z"/>
+			<path id="&lt;Path&gt;" class="s6" d="m922.6 1710.5l156.2-349.6 124.4-27.2-26.7-18.5 103.5-410.4h29.7l-72.5 369.4 42.8-10.4 29.7-116.3 16.8-12-16.8 113.9h16.8l115.7-721.6 46.9-70.6h20.9l-56 67.4-111 742.4 74.9 73.8-192.8 30-74.5 238.1-33.9 9.3 61.7-235.6-27.8-0.6-149.2 323.9z"/>
+			<path id="&lt;Path&gt;" class="s7" d="m1587.3 1007.6h-116.2l102.6-500.4 35.5-38.2-17.9-94.8 71.8-171.5 43.9-35.2v45.3l-47.8 11.7-54.2 147.8 34.6 109.3-50.6 29.9-69.1 451.1 26.9-2.8 90-462.5 50.4-8h19.8v537.1h-19.8v-400.9l-29.8-8.7z"/>
+			<path id="&lt;Path&gt;" class="s8" d="m1435.1 1698.1l57.2-240.6 55-2.2-37.3 172.5 37.3-9.6 26.4-71.9h133.3v139.9z"/>
+		</g>
+		<path id="&lt;Path&gt;" class="s9" d="m1453.3 380l17.8 37.6 18 38.1-46.9-7.7-109.4 95.5-220.4 788.7-66.8 18-192.6 361.8 582.9-18.7-0.8 3.3 271.9-10.4v-141.3l-59.3-169.8-74-56.8-24.9-110.8 144.9-720.9 13.3-275.2v-45.4-214z"/>
+	</g>
+</svg>
