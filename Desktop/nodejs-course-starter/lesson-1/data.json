@@ -1,0 +1,55 @@
+[
+  {
+    "name": "Goku",
+    "description": "A Saiyan raised on Earth, Goku is known for his cheerful personality and incredible fighting abilities. He is the main protagonist of the Dragon Ball series.",
+    "abilities": ["Kamehameha", "Spirit Bomb", "Ultra Instinct"],
+    "affiliation": "Z Fighters",
+    "transformation_levels": ["Super Saiyan", "Super Saiyan God", "Ultra Instinct"],
+    "image": "https://images.immediate.co.uk/production/volatile/sites/3/2023/08/2023.06.28-06.20-boundingintocomics-649c79f009cdf-Cropped-8d74232.png"
+  },
+  {
+    "name": "Vegeta",
+    "description": "The proud prince of the Saiyan race, Vegeta is Goku's rival and ally. He strives to become the strongest warrior in the universe.",
+    "abilities": ["Final Flash", "Big Bang Attack", "Galick Gun"],
+    "affiliation": "Z Fighters, formerly Frieza Force",
+    "transformation_levels": ["Super Saiyan", "Super Saiyan Blue", "Ultra Ego"],
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/8/88/Vegeta_Dragon_Ball.jpg/220px-Vegeta_Dragon_Ball.jpg"
+  },
+  {
+    "name": "Frieza",
+    "description": "A tyrannical galactic overlord known for his cruelty and immense power. He is one of Goku’s most iconic enemies.",
+    "abilities": ["Death Beam", "Supernova", "Golden Frieza"],
+    "affiliation": "Frieza Force",
+    "transformation_levels": ["Final Form", "Golden Frieza"],
+    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FFrieza&psig=AOvVaw2JfYz1yKBz49kA8fKeaaI_&ust=1733483879375000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCMiz9OjAkIoDFQAAAAAdAAAAABAI"
+  },
+  {
+    "name": "Piccolo",
+    "description": "A wise and skilled warrior from the Namekian race. Piccolo was once an enemy of Goku but later became a trusted ally.",
+    "abilities": ["Special Beam Cannon", "Regeneration", "Fused with Kami"],
+    "affiliation": "Z Fighters",
+    "transformation_levels": ["Potential Unleashed", "Orange Piccolo"],
+    "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8c201f96-2089-4a64-9138-967304caa8d5/dfm75yk-6ef5c086-ecd4-43b8-97f5-c44bec87305d.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzhjMjAxZjk2LTIwODktNGE2NC05MTM4LTk2NzMwNGNhYThkNVwvZGZtNzV5ay02ZWY1YzA4Ni1lY2Q0LTQzYjgtOTdmNS1jNDRiZWM4NzMwNWQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.2nBw-gTTDHxoqkUOG8O-zidVPdh2I1TogefrhM2xyCw"
+  },
+  {
+    "name": "Gohan",
+    "description": "The son of Goku and Chi-Chi. Known for his potential and strength, Gohan has played crucial roles in saving Earth.",
+    "abilities": ["Masenko", "Ultimate Form", "Beast Gohan"],
+    "affiliation": "Z Fighters",
+    "transformation_levels": ["Super Saiyan", "Ultimate Form", "Beast"],
+    "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdragonball.fandom.com%2Fwiki%2FGohan&psig=AOvVaw3RMvjs6xTxeTs747qvZaXl&ust=1733483928430000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCMDY6f_AkIoDFQAAAAAdAAAAABAE"
+  },
+  {},
+  {
+    "name": "Jiren",
+    "description": "a universe 11 Fighter.",
+    "abilities": ["Kamehameha", "Spirit Bomb", "Ultra Instinct"],
+    "affiliation": "Z Fighters"
+  },
+  {
+    "name": "Jiren",
+    "description": "a universe 11 Fighter.",
+    "abilities": ["Kamehameha", "Spirit Bomb", "Ultra Instinct"],
+    "affiliation": "Z Fighters"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "name": "lesson-1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.21.2",
+    "lesson-1": "file:"
+  }
+}
