@@ -1,6 +1,6 @@
 # Node.js dependencies
 node_modules/
-
+node-js-course-with-typescript/node_modules
 # Environment variables
 .env
 .env.local
