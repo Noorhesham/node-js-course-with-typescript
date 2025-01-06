@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --spacing: calc(60px + 20 * (100vw - 1440px) / 480);
+}
+.slider-nav__outline {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(var(--spacing) * 6);
+  height: calc(var(--spacing) * 6);
+  pointer-events: none;
+}
+.slider-nav__outline rect {
+  fill: none;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  transform-origin: 50% 50%;
+  stroke: #fff;
+  opacity: 0.2;
+  stroke-width: 1.25;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 2;
+  rx: calc(var(--spacing) * 3);
+  ry: calc(var(--spacing) * 3);
+}
+.btn--nav {
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  overflow: hidden;
+  height: 100%;
+}
+.bg {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 45%, rgba(85, 85, 85, 1) 45%);
+}
