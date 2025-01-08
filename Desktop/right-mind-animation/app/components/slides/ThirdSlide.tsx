@@ -10,27 +10,13 @@ const ThirdSlide = ({ currentSlideIndex }: { currentSlideIndex: number }) => {
   useEffect(() => {
     if (!whenToAnimate) return;
     const ctx = gsap.context(() => {
-      const media = gsap.matchMedia();
-
-      // Desktop animations
-      media.add("(min-width: 768px)", () => {
-        gsap.to(".paragraph", { autoAlpha: 0 });
-        timeline.current = gsap.timeline();
-        timeline.current
-          .to(".paragraph-2", { autoAlpha: 0, opacity: 0 })
-          .fromTo(".slide", { translateX: "50%" }, { translateX: "33%" })
-          .to(".img3", { autoAlpha: 1, duration: 0.5 })
-          .set(".img3", { autoAlpha: 1 });
-      });
-
-      media.add("(max-width: 767px)", () => {
-        timeline.current = gsap.timeline();
-        timeline.current
-          .to(".paragraph-2", { autoAlpha: 0, opacity: 0 })
-          .to(".img3", { autoAlpha: 1, duration: 0.5 })
-          .set(".img3", { autoAlpha: 1 });
-      });
-      return () => media.revert();
+      timeline.current = gsap.timeline();
+      timeline.current
+        .fromTo(".paragraph-2 span", { autoAlpha: 1 }, { autoAlpha: 0, opacity: 0 })
+        .fromTo(".slide", { translateX: "50%" }, { translateX: "33%" })
+        .to(".img3", { autoAlpha: 1, duration: 0.5 })
+        .fromTo(".img2", { autoAlpha: 1 }, { autoAlpha: 0 })
+        .set(".img3", { autoAlpha: 1 });
     });
 
     return () => ctx.revert();
@@ -47,7 +33,7 @@ const ThirdSlide = ({ currentSlideIndex }: { currentSlideIndex: number }) => {
           animate={whenToAnimate}
           playAfterTL={true}
           timeline={timeline.current || undefined} // Pass the timeline reference
-          className="paragraph3   top-40 bottom-auto z-40 md:top-auto lg:bottom-20  absolute left-4 md:left-40 !text-7xl "
+          className="paragraph3 !text-7xl  capitalize  bottom-auto top-64 md:bottom-80  md:top-auto lg:bottom-64 absolute left-10 lg:left-40"
           text="Life style"
         />
       </div>
@@ -57,7 +43,7 @@ const ThirdSlide = ({ currentSlideIndex }: { currentSlideIndex: number }) => {
           animate={whenToAnimate}
           playAfterTL={true}
           timeline={timeline.current || undefined}
-          className="paragraph3 bottom-20 absolute right-40 lg:p-0 p-3 text-xl z-40"
+          className="paragraph3  lowercase top-[40%] max-w-xl lg:top-auto  lg:bottom-20 absolute right-10 lg:left-96 !text-xl   z-40"
           text="Right Mind is a leading company in the real estate development sector, providing innovative and effective solutions to meet the demands of the modern real estate market. We focus on quality, modern designs, and sustainability, striving to balance luxury with functionality across all our projects."
         />
       </div>
