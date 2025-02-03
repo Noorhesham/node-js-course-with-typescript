@@ -1,3 +1,4 @@
+'use server';
 // app/lib/revalidate.ts
 /**
  * Revalidate specific cache tags.

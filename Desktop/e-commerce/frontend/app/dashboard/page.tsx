@@ -1,14 +1,3 @@
-import { AppSidebar } from "../components/app-sidebar";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "../../components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import Fetcher from "../components/Fetcher";
 import { IProduct } from "@/types";
 import { Suspense } from "react";
@@ -17,59 +6,39 @@ import GridContainer from "../components/defaults/GridContainer";
 
 export default function Page() {
   return (
-    <SidebarProvider>
-      <AppSidebar />
-      <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
-          <SidebarTrigger className="-ml-1" />
-          <Separator orientation="vertical" className="mr-2 h-4" />
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="#">Building Your Application</BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator className="hidden md:block" />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-        </header>
-        <div className="flex flex-1 flex-col gap-4 p-4">
-          <Suspense fallback={<div>Loading...</div>}>
-            <Fetcher
-              resourceName="products"
-              cache="force-cache"
-              // queryParams={new URLSearchParams({ limit: "5" })}
-              tags={["products"]}
-            >
-              {({ data: { docs } }: { data: { docs: IProduct[] } }) => (
-                <GridContainer cols={3}>
-                  {docs.map((product) => (
-                    <div key={product._id}>
+    <div className="flex flex-1 flex-col gap-4 p-4">
+      <Suspense fallback={<div>Loading...</div>}>
+        <Fetcher
+          resourceName="products"
+          cache="force-cache"
+          // queryParams={new URLSearchParams({ limit: "5" })}
+          tags={["products"]}
+        >
+          {({ data: { docs }, totalPages }: { data: { docs: IProduct[] }, totalPages: number }) => (
+            <GridContainer cols={3}>
+              {docs.map((product) => (
+                <div key={product._id}>
+                  <div className=" w-52 relative h-52">
+                    <Image src={product?.images[0]?.secure_url} fill alt={product.name} />
+                  </div>
+                  <h2>{product.name}</h2>
+                  {product.variants.map((variant) => (
+                    <div key={variant._id}>
                       <div className=" w-52 relative h-52">
-                        <Image src={product?.images[0]?.secure_url} fill alt={product.name} />
+                        {variant?.images[0]?.secure_url && (
+                          <Image src={variant?.images[0]?.secure_url} fill alt={product.name} />
+                        )}
                       </div>
-                      <h2>{product.name}</h2>
-                      {product.variants.map((variant) => (
-                        <div key={variant._id}>
-                          <div className=" w-52 relative h-52">
-                            {variant?.images[0]?.secure_url && (
-                              <Image src={variant?.images[0]?.secure_url} fill alt={product.name} />
-                            )}
-                          </div>
-                          <h3>{variant.name}</h3>
-                          <p>{variant.price}</p>
-                        </div>
-                      ))}
+                      <h3>{variant.name}</h3>
+                      <p>{variant.price}</p>
                     </div>
                   ))}
-                </GridContainer>
-              )}
-            </Fetcher>
-          </Suspense>
-        </div>
-      </SidebarInset>
-    </SidebarProvider>
+                </div>
+              ))}
+            </GridContainer>
+          )}
+        </Fetcher>
+      </Suspense>
+    </div>
   );
 }

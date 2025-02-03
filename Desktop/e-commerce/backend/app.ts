@@ -12,6 +12,7 @@ import { authRouter } from "./routes/authRouter";
 import apiRouter from "./routes";
 const app = express();
 import { seed } from "./seed";
+import corsOptions from "./config/corsOptions";
 
 /**
  * Purpose: Sets up the web server to handle requests and responses.
@@ -107,8 +108,8 @@ app.use(xss());
  * - Malicious input: `<script>alert('Hacked!')</script>`
  * - Sanitized output: `alert('Hacked!')`
  */
-
-app.use(cors({ credentials: true, origin: true }));
+//@ts-ignore
+app.use(cors(corsOptions));
 /**
  * Middleware: cors
  * Purpose: Enables Cross-Origin Resource Sharing (CORS).

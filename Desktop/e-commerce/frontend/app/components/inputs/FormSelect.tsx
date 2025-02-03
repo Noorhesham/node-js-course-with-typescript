@@ -40,15 +40,17 @@ const FormSelect = ({
               </FormControl>
               <SelectContent>
                 {filteredOptions &&
-                  filteredOptions.map((option, i) => (
-                    <SelectItem
-                      className=" capitalize"
-                      key={i + `${option.label} ${option.value}`}
-                      value={option._id || option.value || option}
-                    >
-                      {option.label || option.name || option}
-                    </SelectItem>
-                  ))}
+                  filteredOptions
+                    .filter((option) => option !== form.getValues(name))
+                    .map((option, i) => (
+                      <SelectItem
+                        className=" capitalize"
+                        key={i + `${option.label} ${option.value}`}
+                        value={option._id || option.value || option}
+                      >
+                        {option.label || option.name || option}
+                      </SelectItem>
+                    ))}
               </SelectContent>
             </Select>
             <FormDescription>{description}</FormDescription>

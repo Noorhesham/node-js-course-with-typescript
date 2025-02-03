@@ -1,36 +1,88 @@
+// components/PhotoInput.tsx
+"use client";
+
+import { useFormContext } from "react-hook-form";
+import { useCallback, useState } from "react";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-import React, { ChangeEvent, useState } from "react";
-function getImageData(event: ChangeEvent<HTMLInputElement>) {
-  // FileList is immutable, so we need to create a new one
-  const dataTransfer = new DataTransfer();
+import { Trash } from "lucide-react";
+import { uploadImageToCloudinary } from "@/utils/helpers";
 
-  // Add newly uploaded images
-  Array.from(event.target.files!).forEach((image) => dataTransfer.items.add(image));
-
-  const files = dataTransfer.files;
-  const displayUrl = URL.createObjectURL(event.target.files![0]);
-
-  return { files, displayUrl };
+interface PhotoInputProps {
+  name: string;
+  value?: Array<{ secure_url: string; publicId: string }>;
 }
-const PhotoInput = ({ value, onChange,noimg  }: { value: any; onChange: (event: any) => any ,noimg?:boolean}) => {
-  const [preview, setPreview] = useState("");
-    console.log(value)
+
+export const PhotoInput = ({ name, value = [] }: PhotoInputProps) => {
+  const { setValue, watch } = useFormContext();
+  const [isUploading, setIsUploading] = useState(false);
+  const currentImages = watch(name) || [];
+
+  const handleUpload = useCallback(
+    async (files: FileList) => {
+      try {
+        setIsUploading(true);
+        console.log(files)
+        const uploadPromises = Array.from(files).map((file) => uploadImageToCloudinary(file));
+
+        const results = await Promise.all(uploadPromises);
+        const newImages = results.map((res) => ({
+          secure_url: res.secure_url,
+          publicId: res.public_id,
+        }));
+
+        setValue(name, [...currentImages, ...newImages]);
+      } catch (error) {
+        console.error("Upload failed:", error);
+      } finally {
+        setIsUploading(false);
+      }
+    },
+    [currentImages, name, setValue]
+  );
+
+  const handleDelete = (publicId: string) => {
+    setValue(
+      name,
+      currentImages.filter((img) => img.publicId !== publicId)
+    );
+  };
+
   return (
-    <div className="w-full">
-      {!noimg&&<div className="  w-40 h-40 mx-auto my-2 relative ">
-        <Image src={preview||value||''} fill alt="preview" className="rounded-full object-cover " />
-      </div>}
+    <div className="space-y-4">
       <Input
-        type="file" 
-        onChange={(event) => {
-          const { files, displayUrl } = getImageData(event);
-          setPreview(displayUrl);
-          onChange(files);
-        }}
+        type="file"
+        multiple
+        accept="image/*"
+        disabled={isUploading}
+        onChange={(e) => e.target.files && handleUpload(e.target.files)}
+        className="cursor-pointer"
       />
+
+      <div className="grid grid-cols-3 gap-4">
+        {currentImages.map((image, index) => (
+          <div key={image.publicId} className="relative w-full h-44 group">
+            <Image
+              src={image.secure_url}
+              alt={`Upload ${index + 1}`}
+              fill
+              className="rounded-lg w-full object-cover aspect-square"
+            />
+            <Button
+              type="button"
+              variant="destructive"
+              size="sm"
+              className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity"
+              onClick={() => handleDelete(image.publicId)}
+            >
+              <Trash className="h-4 w-4" />
+            </Button>
+          </div>
+        ))}
+      </div>
+
+      {isUploading && <p className="text-sm text-muted-foreground">Uploading images...</p>}
     </div>
   );
 };
-
-export default PhotoInput;

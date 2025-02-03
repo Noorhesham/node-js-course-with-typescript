@@ -33,6 +33,15 @@ export interface IUser extends Document {
       ref: "Product";
     }
   ];
+  cart: [
+    {
+      productId: {
+        type: Schema.Types.ObjectId;
+        ref: "Product";
+      };
+      quantity: Number;
+    }
+  ];
 }
 const userSchema = new Schema<IUser>(
   {
@@ -46,6 +55,7 @@ const userSchema = new Schema<IUser>(
     role: { type: String, enum: ["user", "admin"], default: "user" },
     active: { type: Boolean, default: true },
     age: { type: Number },
+    cart: [{ productId: { type: Schema.Types.ObjectId, ref: "Product" }, quantity: Number }],
   },
   { timestamps: true }
 );

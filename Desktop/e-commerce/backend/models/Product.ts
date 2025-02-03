@@ -81,5 +81,10 @@ const productSchema = new Schema<IProduct>(
     timestamps: true,
   }
 );
+productSchema.pre(/^find/, function (next) {
+  //@ts-ignore
+  this.populate("category");
+  next();
+});
 
 export const Product = model<IProduct>("Product", productSchema);

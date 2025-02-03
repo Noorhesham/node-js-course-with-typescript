@@ -1,7 +1,10 @@
 import express from "express";
 import { checkIfAdmin, protect } from "../controllers/authController";
 import { createUser, getUser, getAllUsers, updateUser, deleteUser } from "../controllers/userController";
+import { addToCart, removeFromCart } from "../controllers/cartController";
 const router = express.Router();
-router.route("/").post(protect,checkIfAdmin, createUser).get(getAllUsers);
+router.use(protect);
+router.route("/").post(checkIfAdmin, createUser).get(getAllUsers);
 router.route("/:id").patch(updateUser).delete(deleteUser).get(getUser);
+router.route("/cart").post(addToCart).delete(removeFromCart);
 export const userRouter = router;

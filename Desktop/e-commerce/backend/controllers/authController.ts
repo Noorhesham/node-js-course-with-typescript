@@ -47,7 +47,9 @@ export const register = catchError(async (req: Request, res: Response, next: Nex
 
   sendResponse(res, newUser, 201);
 });
-
+export const getMe = catchError(async (req: any, res: Response, next: NextFunction): Promise<void> => {
+  res.status(200).json({ status: "success", data: { user: req.user } });
+});
 // Login handler
 export const login = catchError(async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   const { email, password } = req.body;

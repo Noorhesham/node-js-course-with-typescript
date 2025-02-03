@@ -51,5 +51,5 @@ export const deleteVariant = catchError(async (req: Request, res: Response, next
   ).lean();
 
   if (!product) return next(new AppError("No product found with this id", 404));
-  res.status(204).json({ data: null });
+  res.status(204).json({ message: "succsessfully deleted", data: { product } });
 });

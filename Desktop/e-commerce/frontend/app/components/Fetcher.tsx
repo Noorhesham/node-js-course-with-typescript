@@ -11,7 +11,7 @@ interface FetcherProps {
   tags?: string[];
 }
 
-const Fetcher = async ({ resourceName, children, queryParams, cache, revalidate, tags }: FetcherProps) => {
+const Fetcher = async ({ resourceName, children, queryParams, cache, revalidate, tags ,}: FetcherProps) => {
   const data = await fetchData({
     resourceName,
     queryParams,
@@ -19,8 +19,8 @@ const Fetcher = async ({ resourceName, children, queryParams, cache, revalidate,
     revalidate,
     tags,
   });
-  console.log(data.data.docs)
-  return <div>{children(data)}</div>;
+  console.log(data);
+  return <>{children(data)}</>;
 };
 
 export default Fetcher;

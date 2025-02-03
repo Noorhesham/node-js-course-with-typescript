@@ -15,7 +15,7 @@ export const fetchData = async ({
   tags,
 }: {
   resourceName: ResourceNameProps;
-  method?: "GET" | "POST" | "PUT" | "DELETE";
+  method?: "GET" | "POST" | "PUT" | "DELETE"|"PATCH";
   body?: any;
   id?: string;
   queryParams?: URLSearchParams;
@@ -42,13 +42,16 @@ export const fetchData = async ({
         revalidate, // Revalidation time
         tags, // Tags for revalidation
       },
+      credentials: "include",
     });
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch ${resourceName}: ${res.statusText}`);
+      const errorBody = await res.json(); // Get actual error message
+      throw new Error(`Failed to fetch ${resourceName}: ${errorBody.message || res.statusText}`);
     }
 
-    const data = await res.json();
+    const data = await res?.json();
+    console.log(data);
     return data;
   } catch (error) {
     console.error(`Error fetching ${resourceName}:`, error);

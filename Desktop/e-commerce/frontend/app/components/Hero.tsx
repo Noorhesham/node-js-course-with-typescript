@@ -6,50 +6,6 @@ const HeroSection = () => {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-6 relative">
       {/* Top Navigation */}
-      <nav className="flex items-center justify-between mb-6">
-        <div className="flex items-center gap-4">
-          <Link href="/" className="text-2xl font-bold text-indigo-600">
-            Rivly
-          </Link>
-          <div className="flex items-center gap-2">
-            <span className="text-sm font-medium">DEPARTMENTS</span>
-            <div className="flex -space-x-1">
-              <div className="w-5 h-5 rounded-full bg-pink-200"></div>
-              <div className="w-5 h-5 rounded-full bg-blue-200"></div>
-            </div>
-            <div className="flex items-center text-sm text-gray-600">
-              View All <span className="ml-1">↓</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-6">
-          <div className="flex items-center gap-3">
-            <div className="relative">
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-indigo-600 rounded-full flex items-center justify-center">
-                <span className="text-[10px] text-white">2</span>
-              </div>
-              <div className="p-2">🛒</div>
-            </div>
-            <span className="text-sm">$0.00</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-gray-200"></div>
-            <span className="text-sm">Ryan</span>
-          </div>
-        </div>
-      </nav>
-
-      {/* Navigation Links */}
-      <div className="flex justify-center gap-8 mb-16 text-sm text-gray-600">
-        {["Popular Products", "Favorite Brands", "Best Deals", "Top Reviews", "Highest Rewards", "Recently Viewed"].map(
-          (item) => (
-            <Link key={item} href={`/${item.toLowerCase().replace(" ", "-")}`} className="hover:text-gray-900">
-              {item}
-            </Link>
-          )
-        )}
-      </div>
 
       {/* Hero Content */}
       <div className="relative">

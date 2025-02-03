@@ -1,8 +1,40 @@
+import { ZodTypeAny } from "zod";
 export interface IVariantOption {
   name: string;
   value: string;
 }
-
+interface ProductCreatePayload {
+  name: string;
+  description: string;
+  category: string;
+  gender: "male" | "female" | "kids";
+  basePrice: number;
+  brand?: string;
+  images: string[];
+  variants: Array<{
+    options: Array<{
+      name: string;
+      value: string;
+    }>;
+    sku: string;
+    price: number;
+    compareAtPrice?: number;
+    inventory: number;
+    images: string[];
+  }>;
+}
+export type IFormField = {
+  name: string;
+  label: string;
+  description?: string;
+  component: "input" | "select" | "checkbox" | "textarea" | "switch" | "photo";
+  type?: string;
+  options?: Array<{ value: string; label: string }>;
+  validation?: ZodTypeAny;
+  placeholder?: string;
+  className?: string;
+  props?: Record<string, any>;
+};
 export interface IVariant {
   options: IVariantOption[];
   sku: string;
@@ -11,6 +43,31 @@ export interface IVariant {
   inventory: number;
   images: string[];
   isActive: boolean;
+}
+interface IOrderItem {
+  product: string;
+  variant: {
+    optionValues: { [key: string]: string };
+    sku: string;
+  };
+  quantity: number;
+  price: number;
+}
+
+export interface IOrder {
+  user: string;
+  items: IOrderItem[];
+  status: "pending" | "processing" | "shipped" | "delivered" | "cancelled";
+  shippingAddress: string;
+  billingAddress: string;
+  paymentMethod: string;
+  paymentStatus: "pending" | "paid" | "failed";
+  subtotal: number;
+  tax: number;
+  shippingCost: number;
+  total: number;
+  trackingNumber?: string;
+  notes?: string;
 }
 
 export interface IProduct {

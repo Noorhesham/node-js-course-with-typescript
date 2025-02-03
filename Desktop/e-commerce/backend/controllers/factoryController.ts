@@ -20,8 +20,13 @@ export const getEntitiy = <T extends Document>(Model: Model<T>) =>
 export const getAllEntitiy = <T extends Document>(Model: Model<T>) =>
   catchError(async (req: Request, res: Response, next: NextFunction) => {
     // await User.find()
-    const docs = await new APIFeatures(Model.find(), req.query).paginate().filter().sort().limitFields().query;
-    res.status(200).json({ data: { docs } });
+    const features = new APIFeatures(Model.find(), req.query).filter();
+    const docs = await features.paginate().sort().limitFields().query; // Use the same query for docs
+    const count = await Model.countDocuments(features.query.getQuery()); // Get count with filters applied
+
+    const limit = req.query.limit || ("10" as String);
+    const maxPages = Math.ceil(count / +limit);
+    res.status(200).json({ data: { docs }, totalPages: maxPages });
   });
 
 export const updateEntitiy = <T extends Document>(Model: Model<T>) =>
