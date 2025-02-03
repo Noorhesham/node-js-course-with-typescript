@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useState, createContext, useContext, useEffect } from "react";
 import useRefreshToken from "../hooks/useRefreshToken";
 import { useAuth } from "./AuthProvider";
