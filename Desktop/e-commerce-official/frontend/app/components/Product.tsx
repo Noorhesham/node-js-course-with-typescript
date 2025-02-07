@@ -11,7 +11,7 @@ const ProductCard = ({ product, index }: { product: IProduct; index: number }) =
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, index * 75);
-    //  r r r 
+    
     return () => clearTimeout(timer);
   }, [index]);
   return isVisible ? (
