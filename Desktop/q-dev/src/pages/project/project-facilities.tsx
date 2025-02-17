@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
+import SvgQ2 from "@/components/SvgQ2";
+import Header from "@/components/Header";
 
 const facilities = [
   { icon: "/icons/pool.svg", title: "3 Swimming pools" },
@@ -16,7 +18,15 @@ const facilities = [
 
 export default function Facilities() {
   return (
-    <div className="relative min-h-screen bg-[#003B5C]">
+    <div className="relative text-white min-h-screen ">
+      <motion.div
+        initial={{ x: -50, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="absolute h-full left-0 top-0 z-20 w-full mix-blend-multiply"
+      >
+        <SvgQ2 />
+      </motion.div>
       <div className="absolute top-0 right-0 w-2/3 h-full">
         <motion.div
           initial={{ opacity: 0 }}
@@ -34,40 +44,13 @@ export default function Facilities() {
         />
       </div>
 
-      <MaxWidthWrapper className="relative z-10">
+      <MaxWidthWrapper className="relative z-30">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-xl py-12 space-y-12"
+          className="max-w-xl pt-16 space-y-12"
         >
-          <div className="flex items-center justify-between">
-            <motion.img
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              src="/q-logo.svg"
-              alt="Q Developments"
-              className="h-8"
-            />
-            <motion.h1
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="text-2xl text-white"
-            >
-              Q North Facilities
-            </motion.h1>
-          </div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="text-cream/80 leading-relaxed"
-          >
-            Our design philosophy is to take nature's elements and integrate them within the project with the objective
-            and strategy to build a perfect harmony between the built environment and nature.
-          </motion.p>
+          <Header view={false} col />
 
           <motion.div
             initial={{ opacity: 0 }}

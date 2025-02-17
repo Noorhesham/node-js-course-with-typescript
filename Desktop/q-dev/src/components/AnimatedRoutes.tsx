@@ -8,10 +8,11 @@ import Location from "@/pages/project/project-location";
 import MasterPlan from "@/pages/project/project-masterplan";
 import Images from "@/pages/project/project-media";
 import About from "@/pages/project/project-overview";
-import ProjectLayout from "@/pages/project/ProjectContainer";
 import Videos from "@/pages/project/Videos";
 import { AnimatePresence } from "framer-motion";
-import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+
+import ProjectTabs from "@/pages/project/Tabs";
 import Start from "./Start";
 
 export const AnimatedRoutes = () => {
@@ -26,11 +27,8 @@ export const AnimatedRoutes = () => {
         <Route path="/places" element={<Places />} />
         <Route path="/:placeId" element={<PlaceDetail />} />
         <Route path="/:placeId/projects" element={<ProjectsPage />} />{" "}
-        <Route path="/:placeId/:projectId" element={<ProjectLayout />}>
-          {/* Render Start component only when at /:placeId/:projectId */}
-          <Route path="" element={<Start />} />
-
-          {/* Nested routes */}
+        <Route path="/:placeId/:projectId" element={<ProjectTabs />}>
+          <Route path="" element={<Start />} /> {/* This will be rendered by ProjectLayout */}
           <Route path="about" element={<About />} />
           <Route path="location" element={<Location />} />
           <Route path="facilities" element={<Facilities />} />

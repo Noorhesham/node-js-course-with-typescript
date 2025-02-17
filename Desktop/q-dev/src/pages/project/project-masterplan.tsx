@@ -18,19 +18,8 @@ export default function MasterPlan() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="space-y-12 py-12"
+              className="space-y-12 grid grid-cols-2 py-12"
             >
-              <div className="flex items-center justify-between">
-                <motion.img
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  src="/q-logo.svg"
-                  alt="Q Developments"
-                  className="h-8"
-                />
-                <motion.h1 className="text-2xl text-white">Q North Master Plan</motion.h1>
-              </div>
-
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -75,46 +64,47 @@ export default function MasterPlan() {
               </div>
 
               <div className="grid grid-cols-2 gap-8">
-                <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="space-y-4">
-                  <h2 className="text-white text-xl">Ground Floor</h2>
-                  <div className="aspect-square rounded-3xl overflow-hidden bg-white/10">
-                    <img
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-lZEwjKBaJp5gNXdT0dzfnEev4bYPvG.png"
-                      alt="Ground Floor Plan"
-                      className="w-full h-full object-contain p-4"
-                    />
-                  </div>
-                </motion.div>
+                <div className=" flex flex-col  w-full gap-3 items-start">
+                  <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className=" w-full space-y-4">
+                    <h2 className="text-white text-xl">Ground Floor</h2>
+                    <div className=" h-64 w-full rounded-3xl overflow-hidden bg-white/10">
+                      <img
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-lZEwjKBaJp5gNXdT0dzfnEev4bYPvG.png"
+                        alt="Ground Floor Plan"
+                        className="w-full h-full object-contain p-4"
+                      />
+                    </div>
+                  </motion.div>
 
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="space-y-4 w-full"
+                  >
+                    <h2 className="text-white text-xl">First Floor</h2>
+                    <div className=" h-64 w-full rounded-3xl overflow-hidden bg-white/10">
+                      <img
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-lZEwjKBaJp5gNXdT0dzfnEev4bYPvG.png"
+                        alt="First Floor Plan"
+                        className="w-full h-full object-contain p-4"
+                      />
+                    </div>
+                  </motion.div>
+                </div>{" "}
                 <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="space-y-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className=" h-96 w-full rounded-3xl overflow-hidden"
                 >
-                  <h2 className="text-white text-xl">First Floor</h2>
-                  <div className="aspect-square rounded-3xl overflow-hidden bg-white/10">
-                    <img
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-lZEwjKBaJp5gNXdT0dzfnEev4bYPvG.png"
-                      alt="First Floor Plan"
-                      className="w-full h-full object-contain p-4"
-                    />
-                  </div>
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-lZEwjKBaJp5gNXdT0dzfnEev4bYPvG.png"
+                    alt="Property View"
+                    className="w-full h-full object-cover"
+                  />
                 </motion.div>
               </div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="aspect-video rounded-3xl overflow-hidden"
-              >
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-lZEwjKBaJp5gNXdT0dzfnEev4bYPvG.png"
-                  alt="Property View"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>

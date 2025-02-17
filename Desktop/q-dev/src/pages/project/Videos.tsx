@@ -7,6 +7,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 import { Play } from "lucide-react";
 import "swiper/css";
 import "swiper/css/navigation";
+import Header from "@/components/Header";
 
 const videos = [
   {
@@ -35,17 +36,10 @@ export default function Videos() {
   return (
     <div className="relative min-h-screen bg-[#003B5C]">
       <MaxWidthWrapper className="relative z-10">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-12 py-12">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="text-cream/80 leading-relaxed max-w-3xl text-center mx-auto"
-          >
-            Q Developments was established in 2022 to engrave its signature in the Egyptian market for a lifetime by
-            introducing quality homes to the Egyptian society in perfectly planned projects that provide integrated
-            services.
-          </motion.p>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="pt-16">
+          <div className=" self-center mx-auto my-5 w-fit flex flex-col !items-center text-center">
+            <Header className=" !items-center text-center" col view={false} />
+          </div>
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -86,18 +80,6 @@ export default function Videos() {
                 </SwiperSlide>
               ))}
             </Swiper>
-
-            {/* Custom Navigation Buttons */}
-            <button className="swiper-button-prev !w-auto !h-auto !static !mt-0 !translate-y-0 absolute left-4 top-1/2 -translate-y-1/2 z-10">
-              <div className="flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-colors">
-                <span className="text-sm">PREV</span>
-              </div>
-            </button>
-            <button className="swiper-button-next !w-auto !h-auto !static !mt-0 !translate-y-0 absolute right-4 top-1/2 -translate-y-1/2 z-10">
-              <div className="flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-colors">
-                <span className="text-sm">NEXT</span>
-              </div>
-            </button>
           </motion.div>
         </motion.div>
       </MaxWidthWrapper>

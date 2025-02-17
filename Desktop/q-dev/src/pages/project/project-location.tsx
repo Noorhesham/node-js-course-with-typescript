@@ -1,73 +1,71 @@
-"use client";
-
+import React from "react";
 import { motion } from "framer-motion";
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
+import { ShoppingCart, Plane, Building2, GraduationCap } from "lucide-react";
+import Header from "@/components/Header";
 
 const locations = [
-  { time: "10", label: "MIN" },
-  { time: "25", label: "MIN" },
-  { time: "05", label: "MIN" },
-  { time: "20", label: "MIN" },
+  {
+    time: "10",
+    label: "FROM ONE MALL",
+    icon: ShoppingCart,
+  },
+  {
+    time: "25",
+    label: "FROM CAIRO AIRPORT",
+    icon: Plane,
+  },
+  {
+    time: "05",
+    label: "FROM FAMILY PARK",
+    icon: Building2,
+  },
+  {
+    time: "20",
+    label: "FROM FUTURE UNIV.",
+    icon: GraduationCap,
+  },
 ];
 
-export default function Location() {
+const Location = () => {
   return (
-    <div className="relative min-h-screen bg-[#003B5C]">
-      <MaxWidthWrapper className="relative z-10">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-12">
-          <div className="flex items-center justify-between">
-            <motion.img
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              src="/q-logo.svg"
-              alt="Q Developments"
-              className="h-8"
-            />
-            <motion.h1
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="text-2xl text-white"
-            >
-              Q North Location
-            </motion.h1>
+    <div className="bg-[#051525] text-white min-h-screen pt-20 ">
+      <MaxWidthWrapper className="flex flex-col gap-5">
+        <Header view={false} />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-5">
+          <div className="space-y-8">
+            <div className="grid grid-cols-2 gap-4">
+              {locations.map((loc, index) => (
+                <div
+                  key={index}
+                  className="bg-[#051525] border border-main rounded-lg p-6 hover:border-main/40 transition-colors"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex flex-col items-center justify-center text-center"
+                  >
+                    <loc.icon className="w-8 h-8 mb-4 text-main" />
+                    <div className="text-3xl font-bold mb-1 special-font">{loc.time} Min</div>
+                    <div className="text-sm text-gray-400">{loc.label}</div>
+                  </motion.div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="grid grid-cols-4 gap-6"
-          >
-            {locations.map((loc, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5 + index * 0.1 }}
-                className="bg-white/10 rounded-xl p-6 text-center"
-              >
-                <div className="text-3xl font-bold text-white">{loc.time}</div>
-                <div className="text-sm text-white/70">{loc.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="relative  w-full h-96 rounded-3xl overflow-hidden"
-          >
+          <div className="relative">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-O17ov5FBnIoAvTkrNzbQNyv9xj2DtG.png"
-              alt="Location Map"
-              className="w-full h-full object-cover"
+              src="/Frame 48096075.png"
+              alt="Q North Location Map"
+              className="rounded-lg w-full h-full object-cover"
             />
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </MaxWidthWrapper>
     </div>
   );
-}
+};
+
+export default Location;

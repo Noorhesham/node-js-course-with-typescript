@@ -4,7 +4,7 @@ import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 import { ButtonCustom } from "@/components/ButtonCustom";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
-
+//page name
 const projectTabs = ["about", "location", "facilities", "masterplan", "videos", "images"];
 
 export function NavigationControls() {
@@ -20,13 +20,13 @@ export function NavigationControls() {
     if (path === `/${placeId}/projects`) return "projects";
     if (path.includes(`/${placeId}/${projectId}`)) {
       const currentTab = projectTabs.find((tab) => path.endsWith(tab));
-      return currentTab || "about";
+      return currentTab || ""; // Default to "about" instead of "location"
     }
     return "places";
   };
 
   const position = getCurrentPosition();
-
+  console.log(position);
   // Navigation logic
   const goNext = () => {
     if (position === "places") {
@@ -34,7 +34,7 @@ export function NavigationControls() {
     } else if (position === "placeDetails") {
       navigate(`/${placeId}/projects`);
     } else if (position === "projects") {
-      navigate(`/${placeId}/${projectId}/about`);
+      navigate(`/${placeId}/${projectId}/about`); // Changed to navigate to "about" first
     } else {
       const currentTabIndex = projectTabs.indexOf(position);
       if (currentTabIndex < projectTabs.length - 1) {

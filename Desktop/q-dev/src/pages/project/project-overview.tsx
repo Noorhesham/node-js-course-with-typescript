@@ -18,7 +18,16 @@ export default function About() {
       </div>
       <MaxWidthWrapper className="text-white z-30 relative container mx-auto">
         <div className="py-32 flex max-w-2xl flex-col gap-5 items-start">
-          <img src="/logo3.png" className=" w-80" alt="" />
+          <motion.img
+            initial={{ x: "100%", opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, type: "spring" }}
+            exit={{ x: -100 }}
+            layoutId="shared-logo"
+            src="/logo3.png"
+            className=" w-80"
+            alt=""
+          />
           <h2 className="special-font text-5xl text-cream mb-12 text-center">Our Achievements</h2>
           <p>
             Q Developments was established in 2022 to engrave its signature in the Egyptian market for a lifetime by

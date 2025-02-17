@@ -37,8 +37,9 @@ const Start = () => {
     <div className="min-h-screen bg-[#003B5C]">
       <MaxWidthWrapper className="relative pt-20 z-10 flex items-center flex-col gap-5">
         <motion.img
+          layoutId="shared-logo"
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           src="/logocol.svg"
           className="w-72"
@@ -49,7 +50,7 @@ const Start = () => {
             {tabs.map((tab) => (
               <motion.div key={tab.id} variants={item}>
                 <Link to={`/${placeId}/${projectId}/${tab.id}`}>
-                  <SpcialButton>{tab.label}</SpcialButton>
+                  <SpcialButton className=" !text-base !font-bold special-font">{tab.label}</SpcialButton>
                 </Link>
               </motion.div>
             ))}
