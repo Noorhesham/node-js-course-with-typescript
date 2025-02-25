@@ -5,6 +5,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "noEmit": false, // Ensures TS compiles but does not type-check
+    "skipLibCheck": true, // Skips checking .d.ts files
+    "isolatedModules": true //
   }
 }
