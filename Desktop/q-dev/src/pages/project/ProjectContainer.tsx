@@ -1,21 +1,21 @@
 import { motion } from "framer-motion";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import { ButtonCustom } from "@/components/ButtonCustom";
-import { ChevronLeft, ChevronRight, Home } from "lucide-react";
+import { ChevronLeft, Home } from "lucide-react";
 
 const projects = [
   {
     id: "q-north",
     name: "Q North Project",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jPg1FHgb2C5IGES1jT8jionTU3w0Kt.png",
+    image: "/p1.png",
   },
   {
     id: "q-six",
     name: "Q Six Project",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jPg1FHgb2C5IGES1jT8jionTU3w0Kt.png",
+    image: "/p2.png",
   },
 ];
 
@@ -41,8 +41,11 @@ export default function Projects() {
                   className="absolute inset-0 w-full h-full object-cover transition-transform group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                <div className="absolute bottom-6 left-6">
-                  <h2 className="text-2xl text-white font-semibold">{project.name}</h2>
+                <div className=" flex items-stretch  absolute bottom-6 left-0">
+                  <img src="/q.png" className=" h-12" alt="" />
+                  <h2 className="text-2xl bg-main2 h-full  px-10 py-2 rounded-r-2xl text-white font-semibold">
+                    {project.name}
+                  </h2>
                 </div>
               </motion.div>
             </Link>

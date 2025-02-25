@@ -7,17 +7,17 @@ const places = [
   {
     id: "north-coast",
     name: "North Coast",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-HicGFo0ta0gdCjexSl2I38MVQZYJDo.png",
+    image:'/place1.png',
   },
   {
     id: "alexandria",
     name: "Alexandria",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-HicGFo0ta0gdCjexSl2I38MVQZYJDo.png",
+    image:'/place1.png',
   },
   {
     id: "new-zayed",
     name: "New Zayed",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-HicGFo0ta0gdCjexSl2I38MVQZYJDo.png",
+    image:'/place2.png',
   },
 ];
 

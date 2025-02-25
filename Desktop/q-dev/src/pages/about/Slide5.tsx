@@ -1,15 +1,18 @@
 import { motion } from "framer-motion";
-import { Star, Shield, Target, Heart } from "lucide-react";
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
-import SvgQ2 from "@/components/SvgQ2";
+import { useNav } from "@/context/NavContext";
+import { useEffect } from "react";
 
 const Slide5 = () => {
   const values = ["/logo1.png", "/logoo2.png", "/logo3.png", "logo4.svg"];
-
+  const { setTitle } = useNav();
+  useEffect(() => {
+    setTitle("Our Partener");
+  }, []);
   return (
     <div className="relative min-h-screen overflow-hidden">
       <div className="absolute inset-0 opacity-30">
-        <img src="/Rectangle 3 (3).png" alt="Background Pattern" className="object-cover bg-fixed" />
+        <img src="/Rectangle 3 (5).png" alt="Background Pattern" className="object-cover z-10 bg-fixed" />
       </div>
       <MaxWidthWrapper className="text-white z-30 relative container mx-auto">
         <div className="py-32">

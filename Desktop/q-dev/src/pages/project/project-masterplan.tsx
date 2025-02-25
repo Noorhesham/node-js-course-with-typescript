@@ -4,12 +4,24 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 import { ChevronLeft } from "lucide-react";
+import Header from "@/components/Header";
 
 export default function MasterPlan() {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div className="relative min-h-screen bg-[#003B5C]">
+    <div className="relative min-h-screen flex justify-center items-center bg-[#003B5C]">
+      {" "}
+      <div className="mix-blend-multiply bg-main2 absolute left-0 top-0 z-10 w-full h-full"></div>
+      <motion.div
+        className="absolute inset-0"
+        initial={{ scale: 1.1, opacity: 0.8 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        viewport={{ once: true }}
+      >
+        <img src="/Rectangle 3 (7).png" alt="Background Pattern" className="object-cover w-full h-full bg-fixed" />
+      </motion.div>
       <MaxWidthWrapper className="relative z-10">
         <AnimatePresence mode="wait">
           {!showDetails ? (
@@ -18,17 +30,9 @@ export default function MasterPlan() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="space-y-12 grid grid-cols-2 py-12"
+              className=" grid gap-5 grid-cols-2"
             >
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-cream/80 leading-relaxed max-w-xl"
-              >
-                Our goal is to deliver luxury homes with elegant and modern designs that provide comfort and luxury to
-                our clients.
-              </motion.p>
+              <Header view={false} col />
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -37,11 +41,7 @@ export default function MasterPlan() {
                 className="aspect-[2/1] rounded-3xl overflow-hidden cursor-pointer"
                 onClick={() => setShowDetails(true)}
               >
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-lZEwjKBaJp5gNXdT0dzfnEev4bYPvG.png"
-                  alt="Master Plan"
-                  className="w-full h-full object-cover"
-                />
+                <img src="/Rectangle 8.png" alt="Master Plan" className="w-full h-full object-cover" />
               </motion.div>
             </motion.div>
           ) : (
@@ -64,8 +64,12 @@ export default function MasterPlan() {
               </div>
 
               <div className="grid grid-cols-2 gap-8">
-                <div className=" flex flex-col  w-full gap-3 items-start">
-                  <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className=" w-full space-y-4">
+                <div className="overflow-y-scroll max-h-96 flex flex-col  w-full gap-3 items-start">
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    className=" w-full space-y-4"
+                  >
                     <h2 className="text-white text-xl">Ground Floor</h2>
                     <div className=" h-64 w-full rounded-3xl overflow-hidden bg-white/10">
                       <img
@@ -80,7 +84,7 @@ export default function MasterPlan() {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="space-y-4 w-full"
+                    className="space-y-4  w-full"
                   >
                     <h2 className="text-white text-xl">First Floor</h2>
                     <div className=" h-64 w-full rounded-3xl overflow-hidden bg-white/10">

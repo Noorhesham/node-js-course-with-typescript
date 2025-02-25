@@ -8,26 +8,28 @@ import { Play } from "lucide-react";
 import "swiper/css";
 import "swiper/css/navigation";
 import Header from "@/components/Header";
+import ModelCustom from "@/components/ModelCustom";
+import { Dialog, DialogTrigger, DialogContent, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 
 const videos = [
   {
     id: 1,
-    thumbnail: "/video-thumb-1.jpg",
+    thumbnail: "/Rectangle 7 (5).png",
     video: "/video-1.mp4",
   },
   {
     id: 2,
-    thumbnail: "/video-thumb-2.jpg",
+    thumbnail: "/Rectangle 7 (5).png",
     video: "/video-2.mp4",
   },
   {
     id: 3,
-    thumbnail: "/video-thumb-3.jpg",
+    thumbnail: "/Rectangle 7 (5).png",
     video: "/video-3.mp4",
   },
   {
     id: 4,
-    thumbnail: "/video-thumb-4.jpg",
+    thumbnail: "/Rectangle 7 (5).png",
     video: "/video-4.mp4",
   },
 ];
@@ -53,7 +55,7 @@ export default function Videos() {
               slidesPerView={3}
               loop={true}
               autoplay={{
-                delay: 3000,
+                delay: 1500,
                 disableOnInteraction: false,
               }}
               navigation={{
@@ -72,9 +74,21 @@ export default function Videos() {
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Play className="w-6 h-6 text-white" />
-                      </div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <div className="w-12 h-12 rounded-full bg-main2 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <Play className="w-6 h-6 text-white" />
+                          </div>
+                        </DialogTrigger>
+                        <DialogContent className="!max-w-full !h-[90vh] bg-transparent w-full  ">
+                          <div className=" w-full  ">
+                            <video controls
+                              src="/JoJo with Dragon Ball Sound Effects Test.mp4"
+                              className="w-full h-full inset-0   absolute object-cover"
+                            ></video>
+                          </div>
+                        </DialogContent>
+                      </Dialog>
                     </div>
                   </div>
                 </SwiperSlide>

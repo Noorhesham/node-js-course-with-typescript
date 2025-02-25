@@ -2,33 +2,42 @@
 
 import { motion } from "framer-motion";
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
+import { useNav } from "@/context/NavContext";
+import { useEffect } from "react";
 
 const Slide7 = () => {
   const certificates = [
     {
       title: "ISO 14001",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5ko7OhZDfiiRuiSkp4rOAnVKPQsMhX.png",
+      image: "/Rectangle 9 (1).png",
       description: "Management System Certificate",
     },
     {
       title: "Quality Management System",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5ko7OhZDfiiRuiSkp4rOAnVKPQsMhX.png",
+      image: "/Rectangle 11.png",
       description: "Certificate of Compliance",
     },
     {
       title: "ISO 9001",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5ko7OhZDfiiRuiSkp4rOAnVKPQsMhX.png",
+      image: "/Rectangle 10.png",
       description: "QMS Registered",
     },
     {
       title: "CSM Certificate",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-5ko7OhZDfiiRuiSkp4rOAnVKPQsMhX.png",
+      image: "/Rectangle 11.png",
       description: "Quality Management System",
     },
   ];
-
+  const { setTitle } = useNav();
+  useEffect(() => {
+    setTitle("Certificates");
+  }, []);
   return (
-    <div className="relative min-h-screen bg-[#003B5C] overflow-hidden">
+    <div className="relative min-h-screen  overflow-hidden">
+      {" "}
+      <div className="absolute inset-0 w-full h-full bg-main2 z-20 mix-blend-multiply" />
+      <div className=" absolute inset-0 w-full h-full bg-white/30 z-10"></div>
+      <video src="/pattern v03.mp4" loop autoPlay muted className="absolute   inset-0 w-full h-full object-cover" />
       <MaxWidthWrapper className="text-white z-30 relative">
         <div className="pt-14 ">
           <motion.div

@@ -2,18 +2,24 @@ import { motion } from "framer-motion";
 
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 import SvgQ2 from "@/components/SvgQ2";
+import { useEffect } from "react";
+import { useNav } from "@/context/NavContext";
 
 const Slide6 = () => {
+  const { setTitle } = useNav();
+  useEffect(() => {
+    setTitle("Our Partener");
+  }, []);
   return (
     <div className="relative min-h-screen overflow-hidden">
       <motion.div
         initial={{ x: -50, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
+        animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}
-        className="absolute left-0 top-0 z-20 w-full mix-blend-multiply"
+        className="absolute h-full left-0 top-0 z-20 w-full mix-blend-multiply"
       >
         <SvgQ2 />
-      </motion.div>{" "}
+      </motion.div>
       <div className="absolute inset-0 ">
         <img src="/Rectangle 3 (4).png" alt="Background Pattern" className="object-cover bg-fixed" />
       </div>

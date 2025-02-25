@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 import SvgQ2 from "@/components/SvgQ2";
+import { useNav } from "@/context/NavContext";
 
 const Counter = ({ value }) => {
   const count = useMotionValue(0);
@@ -16,11 +17,15 @@ const Counter = ({ value }) => {
 };
 
 const Slide1 = () => {
+  const { setTitle } = useNav();
+  useEffect(() => {
+    setTitle("About Us");
+  }, []);
   return (
     <div className="relative min-h-screen overflow-hidden">
       <motion.div
         initial={{ x: -50, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
+        animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}
         className="absolute h-full left-0 top-0 z-20 w-full mix-blend-multiply"
       >

@@ -4,8 +4,11 @@ import Header from "@/components/Header";
 
 export default function PlaceDetail() {
   return (
-    <div className="relative  min-h-screen bg-[#003B5C] overflow-hidden">
-      <MaxWidthWrapper className="relative  text-white  z-10">
+    <div className="relative  min-h-screen  overflow-hidden">
+      <div className=" absolute inset-0 w-full h-full bg-main2 z mix-blend-multiply z-10"></div>
+     
+      <img src="/Rectangle 3.png" className="object-cover w-full absolute inset-0 h-full" alt="" />
+      <MaxWidthWrapper className="relative z-20  text-white  ">
         <div className="flex flex-col gap-12 mt-20">
           <Header />
 

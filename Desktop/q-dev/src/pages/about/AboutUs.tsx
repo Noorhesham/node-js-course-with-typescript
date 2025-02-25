@@ -15,6 +15,7 @@ import { ButtonCustom } from "@/components/ButtonCustom";
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 import AnimatedSvgQ from "@/components/SvgQ";
 import { cn } from "@/lib/utils";
+import { redirect, useNavigate } from "react-router-dom";
 
 const slides = [
   { id: 1, component: Slide1 },
@@ -36,7 +37,7 @@ const AboutUs = () => {
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
-
+  const navigate = useNavigate();
   return (
     <div className={cn("relative  overflow-hidden h-screen", currentSlide !== 5 && "bg-[#003B5C]")}>
       <div className=" mix-blend-multiply absolute left-0 top-0 z-30 w-96">
@@ -82,7 +83,7 @@ const AboutUs = () => {
           </ButtonCustom>
         </div>{" "}
         <Button
-          onClick={() => setCurrentSlide(0)}
+          onClick={() => (currentSlide === 0 ? navigate("/") : setCurrentSlide(0))}
           variant="default"
           size="lg"
           className="fixed !px-4  !py-6 cursor-pointer hover:bg-white hover:text-gray-800 bottom-8 right-36 duration-200 rounded-full text-white bg-main2 z-50 backdrop-blur-sm"

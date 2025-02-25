@@ -1,36 +1,79 @@
-import { motion } from "framer-motion";
+"use client";
 
-const images = [
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jPg1FHgb2C5IGES1jT8jionTU3w0Kt.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jPg1FHgb2C5IGES1jT8jionTU3w0Kt.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jPg1FHgb2C5IGES1jT8jionTU3w0Kt.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jPg1FHgb2C5IGES1jT8jionTU3w0Kt.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jPg1FHgb2C5IGES1jT8jionTU3w0Kt.png",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jPg1FHgb2C5IGES1jT8jionTU3w0Kt.png",
+import { motion } from "framer-motion";
+import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import { Play } from "lucide-react";
+import "swiper/css";
+import "swiper/css/navigation";
+import Header from "@/components/Header";
+
+const videos = [
+  {
+    id: 1,
+    thumbnail: "/Rectangle 7 (5).png",
+  },
+  {
+    id: 2,
+    thumbnail: "/Rectangle 7 (5).png",
+  },
+  {
+    id: 3,
+    thumbnail: "/Rectangle 7 (5).png",
+  },
+  {
+    id: 4,
+    thumbnail: "/Rectangle 7 (5).png",
+  },
 ];
 
 export default function Images() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="grid grid-cols-1 md:grid-cols-3 gap-6"
-    >
-      {images.map((image, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.1 }}
-          className="aspect-video rounded-[32px] overflow-hidden group"
-        >
-          <img
-            src={image || "/placeholder.svg"}
-            alt={`Gallery Image ${index + 1}`}
-            className="w-full h-full object-cover transition-transform group-hover:scale-110"
-          />
+    <div className="relative min-h-screen bg-[#003B5C]">
+      <MaxWidthWrapper className="relative z-10">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="pt-16">
+          <div className=" self-center mx-auto my-5 w-fit flex flex-col !items-center text-center">
+            <Header className=" !items-center text-center" col view={false} />
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="relative"
+          >
+            <Swiper
+              modules={[Autoplay, Navigation]}
+              spaceBetween={24}
+              slidesPerView={3}
+              loop={true}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              navigation={{
+                prevEl: ".swiper-button-prev",
+                nextEl: ".swiper-button-next",
+              }}
+              className="w-full"
+            >
+              {videos.map((video) => (
+                <SwiperSlide key={video.id}>
+                  <div className="relative aspect-[4/3] rounded-[32px] overflow-hidden group cursor-pointer">
+                    <img
+                      src={video.thumbnail || "/placeholder.svg"}
+                      alt={`Video ${video.id}`}
+                      className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </motion.div>
         </motion.div>
-      ))}
-    </motion.div>
+      </MaxWidthWrapper>
+    </div>
   );
 }

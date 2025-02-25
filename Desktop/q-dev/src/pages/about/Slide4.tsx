@@ -1,17 +1,18 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { MaxWidthWrapper } from "@/components/MaxWidthWrapper"
-import { useState } from "react"
+import { motion } from "framer-motion";
+import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
+import { useEffect, useState } from "react";
+import { useNav } from "@/context/NavContext";
 
 const Slide4 = () => {
-  const [hoveredMember, setHoveredMember] = useState<number | null>(null)
+  const [hoveredMember, setHoveredMember] = useState<number | null>(null);
 
   const team = [
     {
       name: "Eng. Samy Abdelrahim",
       role: "Board Member of Q Developments",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-xkU9XynCcystbdc2ndILxyxfXtElFm.png",
+      image: "/Rectangle 7 (3).png",
       details: `• Over 15 years of experience in real estate development, construction and business management.
       • Graduated as a Civil Engineer.
       • Proven track record in managing and executing large-scale projects with total investments exceeding EGP 2B.
@@ -21,7 +22,7 @@ const Slide4 = () => {
     {
       name: "Eng. Mohamed Gaber",
       role: "Board Member of Q Developments",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-xkU9XynCcystbdc2ndILxyxfXtElFm.png",
+      image: "/Rectangle 7 (2).png",
       details: `• Over 15 years of experience in real estate development and project management.
       • Civil Engineering background with extensive expertise.
       • Successfully managed projects worth over EGP 1.5B.
@@ -30,31 +31,21 @@ const Slide4 = () => {
     {
       name: "Eng. Abdullah Ahmed",
       role: "Board Member of Q Developments",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-xkU9XynCcystbdc2ndILxyxfXtElFm.png",
+      image: "/Rectangle 7 (3).png",
       details: `• 12+ years in real estate and construction management.
       • Architectural engineering expertise.
       • Led projects valued at EGP 2B+.
       • Specializes in sustainable development practices.`,
     },
-  ]
-
+  ];
+  const { setTitle } = useNav();
+  useEffect(() => {
+    setTitle("Board Members");
+  }, []);
   return (
     <div className="relative min-h-screen bg-[#003B5C] overflow-hidden">
-      {/* Header */}
-      <div className="absolute top-0 left-0 right-0 z-20 py-8">
-        <MaxWidthWrapper>
-          <div className="flex justify-between items-center">
-            <div className="flex items-center gap-4">
-              <img src="/Vector (8).png" alt="Q Developments"    />
-              <span className="text-white text-xl">Developments</span>
-            </div>
-            <span className="text-white text-xl">Board Members</span>
-          </div>
-        </MaxWidthWrapper>
-      </div>
-
       <MaxWidthWrapper className="text-white z-30 relative">
-        <div className="pt-32 pb-16">
+        <div className="pt-24 pb-16">
           <div className="grid grid-cols-3 gap-8 mt-16">
             {team.map((member, index) => (
               <motion.div
@@ -111,8 +102,7 @@ const Slide4 = () => {
         </div>
       </MaxWidthWrapper>
     </div>
-  )
-}
+  );
+};
 
-export default Slide4
-
+export default Slide4;

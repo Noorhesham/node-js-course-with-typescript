@@ -29,17 +29,25 @@ const locations = [
 
 const Location = () => {
   return (
-    <div className="bg-[#051525] text-white min-h-screen pt-20 ">
-      <MaxWidthWrapper className="flex flex-col gap-5">
+    <div className=" text-white min-h-screen pt-20 ">
+      {" "}
+      <div className="mix-blend-multiply bg-main2 absolute left-0 top-0 z-10 w-full h-full"></div>{" "}
+      <motion.div
+        className="absolute inset-0"
+        initial={{ scale: 1.1, opacity: 0.8 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        viewport={{ once: true }}
+      >
+        <img src="/Rectangle 3 (4).png" alt="Background Pattern" className="object-cover w-full h-full bg-fixed" />
+      </motion.div>
+      <MaxWidthWrapper className="flex relative z-40 flex-col gap-5">
         <Header view={false} />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-5">
           <div className="space-y-8">
             <div className="grid grid-cols-2 gap-4">
               {locations.map((loc, index) => (
-                <div
-                  key={index}
-                  className="bg-[#051525] border border-main rounded-lg p-6 hover:border-main/40 transition-colors"
-                >
+                <div key={index} className="border border-main rounded-lg p-6 hover:border-main/40 transition-colors">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}

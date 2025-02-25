@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 import ItemCardGrid from "@/components/ItemCardGrid";
+import { useEffect } from "react";
+import { useNav } from "@/context/NavContext";
 
 const Slide2 = () => {
   const container = {
@@ -20,7 +22,10 @@ const Slide2 = () => {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0 },
   };
-
+  const { setTitle } = useNav();
+  useEffect(() => {
+    setTitle("Mission , Vision & Values");
+  }, []);
   return (
     <div className="relative min-h-screen bg-[#003B5C] overflow-hidden">
       {/* Background Wave Pattern */}
@@ -31,7 +36,8 @@ const Slide2 = () => {
       <MaxWidthWrapper className="relative pt-20 z-10">
         <motion.div className=" flex flex-col gap-1" variants={container} initial="hidden" animate="show">
           {/* Vision Section */}
-          <ItemCardGrid reverse
+          <ItemCardGrid
+            reverse
             item={item}
             desc="To become The Leading Innovator Brand in the Accessible Intermediate Luxury Real Estate category in the region. Q Developments’ vision to be 'reaching the beyond' is not just a phrase we use on marketing literature. It defines our company culture. It's an ambition, something we strive towards. How we achieve this ambition is very important."
             image="/Rectangle 13.png"
@@ -39,7 +45,7 @@ const Slide2 = () => {
           />
 
           {/* Mission Section */}
-          <ItemCardGrid  
+          <ItemCardGrid
             item={item}
             desc="To build real homes around the best locations, and serve them with modern design. We create the best value within the Accessible Intermediate Luxury Category, mastering the delicate balance between: Excellent Customer Service and Experience - Continuous Innovations - Effective Quality - Optimal Price."
             image="/Rectangle 14.png"
@@ -47,7 +53,8 @@ const Slide2 = () => {
           />
 
           {/* Values Section */}
-          <ItemCardGrid reverse
+          <ItemCardGrid
+            reverse
             item={item}
             desc="OUR VALUES help us achieve our vision in an ethical and consistent way. These values apply to every aspect of our work. When you represent our Company, you work with these values in mind. They support our strategic objectives and underpin the day-to-day activities of our business."
             image="/Rectangle 15.png"

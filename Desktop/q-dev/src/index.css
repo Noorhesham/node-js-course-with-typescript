@@ -108,8 +108,6 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-
-
 body {
   font-family: "Cairo", serif;
   background-color: #162456;
@@ -125,5 +123,14 @@ body {
 .swiper-button-disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 

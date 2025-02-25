@@ -6,49 +6,49 @@ import SvgQ2 from "@/components/SvgQ2";
 import Header from "@/components/Header";
 
 const facilities = [
-  { icon: "/icons/pool.svg", title: "3 Swimming pools" },
-  { icon: "/icons/beach.svg", title: "Private beach" },
-  { icon: "/icons/club.svg", title: "Club house" },
-  { icon: "/icons/hotel.svg", title: "Hotel" },
-  { icon: "/icons/mall.svg", title: "Commercial area & strip mall" },
-  { icon: "/icons/lagoon.svg", title: "Crystal lagoon" },
-  { icon: "/icons/landscape.svg", title: "Landscape & water feature" },
-  { icon: "/icons/activities.svg", title: "Gym & fitness area" },
+  { icon: "/icon1.svg", title: "3 Swimming pools" },
+  { icon: "/icon1.svg", title: "Private beach" },
+  { icon: "/icon2.svg", title: "Club house" },
+  { icon: "/icon3.svg", title: "Hotel" },
+  { icon: "/icon4.svg", title: "Commercial area & strip mall" },
+  { icon: "/icon5.svg", title: "Crystal lagoon" },
+  { icon: "/icon1.svg", title: "Landscape & water feature" },
+  { icon: "/icon1.svg", title: "Gym & fitness area" },
 ];
 
 export default function Facilities() {
   return (
     <div className="relative text-white min-h-screen ">
+      {" "}
       <motion.div
         initial={{ x: -50, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
+        animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}
         className="absolute h-full left-0 top-0 z-20 w-full mix-blend-multiply"
       >
         <SvgQ2 />
       </motion.div>
-      <div className="absolute top-0 right-0 w-2/3 h-full">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="w-full h-full"
-          style={{
-            backgroundImage: `url(${encodeURI(
-              "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-BENPnPVoctRMk1QleIw1uRj5N5m9mV.png"
-            )})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            clipPath: "path('M0 0H100%V100%H0C100 80 100 20 0 0Z')",
-          }}
-        />
-      </div>
-
+      <motion.div
+        initial={{ x: -50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="absolute h-full left-0 top-0 z-20 w-full mix-blend-multiply"
+      >
+        <SvgQ2 />
+      </motion.div>{" "}
+      <motion.div
+        className="absolute inset-0"
+        initial={{ scale: 1.1, opacity: 0.8 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.5 }}
+      >
+        <img src="/Rectangle 3 (4).png" alt="Background Pattern" className="object-cover w-full h-full bg-fixed" />
+      </motion.div>
       <MaxWidthWrapper className="relative z-30">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-xl pt-16 space-y-12"
+          className="max-w-2xl pt-20 flex flex-col gap-6"
         >
           <Header view={false} col />
 

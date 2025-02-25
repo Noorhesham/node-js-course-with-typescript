@@ -1,11 +1,17 @@
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
+import { useNav } from "@/context/NavContext";
+import { useEffect } from "react";
 
 const Slide3 = () => {
+  const { setTitle } = useNav();
+  useEffect(() => {
+    setTitle("Our CEO");
+  }, []);
   return (
     <div className="relative min-h-screen  overflow-hidden">
       {/* Background Wave Pattern */}
       <div className="absolute inset-0 opacity-30">
-        <img src="/Rectangle 3 (2).png" alt="Background Pattern" className="object-cover bg-fixed" />
+        <img src="/Rectangle 3 (2).png" alt="Background Pattern" className="object-cover z-10 bg-fixed" />
       </div>
       <MaxWidthWrapper className="text-white z-30 relative container mx-auto">
         <div className="flex items-center justify-between py-32">
@@ -25,8 +31,25 @@ const Slide3 = () => {
             </ul>
           </div>
 
-          <div className="relative w-[400px] h-[500px] rounded-lg overflow-hidden">
-            <img src="/Rectangle 5 (2).png" alt="CEO" className="object-cover w-full h-full" />
+          <div className=" relative">
+            <div className="relative w-[400px] h-[500px] rounded-lg  overflow-hidden">
+              <img
+                src="/Rectangle 5 (2).png"
+                alt="CEO"
+                className="object-cover right-0 absolute top-1/2 -translate-y-1/2  z-20 w-[80%] h-[80%]"
+              />{" "}
+            </div>
+            <img
+              src="/Vector (14).png"
+              alt="Background Pattern"
+              className="object-cover z-10 absolute inset-0 w-full h-full"
+            />
+            <div className=" -mt-8 pb-4  relative  ">
+              <h2 className=" text-2xl font-semibold   relative text-center  special-font text-main2 z-30">
+                Eng Ahmed Gaber
+              </h2>
+              <p className="text-black relative z-30  text-center">is the CEO of Q developments.</p>
+            </div>
           </div>
         </div>
       </MaxWidthWrapper>

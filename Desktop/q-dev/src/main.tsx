@@ -4,13 +4,15 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import NavBar from "./components/NavBar.tsx";
 import { AnimatedRoutes } from "./components/AnimatedRoutes.tsx";
+import { NavProvider } from "./context/NavContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
-      {" "}
-      <NavBar />
-      <AnimatedRoutes />
+      <NavProvider>
+        <NavBar />
+        <AnimatedRoutes />
+      </NavProvider>
     </BrowserRouter>
   </StrictMode>
 );
