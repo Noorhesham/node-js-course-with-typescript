@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyber Simon</title>
+    <style>
+      body {
+        background: #1a1a1a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "Arial", sans-serif;
+        color: white;
+      }
+
+      .game-container {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        margin: 20px;
+        border-radius: 50%;
+        background: #2a2a2a;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+        padding: 20px;
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+      }
+
+      .color-btn {
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: transform 0.2s, opacity 0.2s;
+      }
+
+      .color-btn:hover {
+        transform: scale(1.05);
+      }
+
+      .color-btn.pressed {
+        opacity: 0.8;
+        transform: scale(0.95);
+      }
+
+      #red {
+        background: #ff4444;
+      }
+      #green {
+        background: #44ff44;
+      }
+      #blue {
+        background: #4444ff;
+      }
+      #yellow {
+        background: #ffff44;
+      }
+
+      #controls {
+        text-align: center;
+        margin: 20px;
+      }
+
+      button {
+        background: #4444ff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      button:hover {
+        background: #6666ff;
+      }
+
+      #game-over {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        display: none;
+      }
+
+      .score {
+        font-size: 24px;
+        margin: 10px;
+        color: #44ff44;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="score">Round: <span id="round">0</span></div>
+    <div class="game-container">
+      <button class="color-btn" data-color="red" id="red"></button>
+      <button class="color-btn" data-color="green" id="green"></button>
+      <button class="color-btn" data-color="blue" id="blue"></button>
+      <button class="color-btn" data-color="yellow" id="yellow"></button>
+      <div id="game-over">
+        <h2>Game Over!</h2>
+        <p>Reached Round: <span id="final-round">0</span></p>
+        <button onclick="startGame()">Play Again</button>
+      </div>
+    </div>
+    <div id="controls">
+      <button onclick="startGame()">Start Game</button>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

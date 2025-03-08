@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #222;
+  color: white;
+  text-align: center;
+}
+.container {
+  margin-top: 50px;
+}
+input {
+  padding: 10px;
+  width: 300px;
+}
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+.movie img {
+  width: 150px;
+}

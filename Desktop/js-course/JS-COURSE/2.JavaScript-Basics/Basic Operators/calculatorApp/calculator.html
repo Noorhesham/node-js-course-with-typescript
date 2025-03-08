@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      .calculator {
+        width: 320px;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .display {
+        text-align: right;
+        margin-bottom: 20px;
+      }
+
+      .time {
+        text-align: left;
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      .calculation {
+        font-size: 24px;
+        margin-bottom: 8px;
+        min-height: 28px;
+      }
+
+      .result {
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      button {
+        padding: 15px;
+        font-size: 20px;
+        border: none;
+        border-radius: 8px;
+        background: #f8f8f8;
+        cursor: pointer;
+      }
+
+      button:active {
+        background: #e0e0e0;
+      }
+
+      .operator {
+        background: #ff9500;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="display">
+        <div class="time">9:41</div>
+        <div class="calculation" id="calculation">0</div>
+        <div class="result" id="result"></div>
+      </div>
+      <div class="buttons">
+        <button class="operator">AC</button>
+        <button class="operator">%</button>
+        <button class="operator">%</button>
+        <button class="operator">÷</button>
+
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="operator">×</button>
+
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button class="operator">—</button>
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="operator">+</button>
+
+        <button class="operator">○</button>
+        <button>0</button>
+        <button>.</button>
+        <button class="operator">=</button>
+      </div>
+    </div>
+
+    <script>
+      let currentInput = "0";
+      let firstOperand = null;
+      let operator = null;
+      let shouldResetScreen = false;
+
+      const calculationDisplay = document.getElementById("calculation");
+      const resultDisplay = document.getElementById("result");
+      const time = document.querySelector(".time");
+      setInterval(() => {
+        time.textContent = new Date().toLocaleTimeString();
+      }, 1000);
+      document.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", function () {
+          handleButton(button.textContent);
+        });
+      });
+      const handleButton = (value) => {
+        switch (value) {
+          case "AC":
+            clear();
+            break;
+          case "÷":
+          case "×":
+          case "-":
+          case "+":
+            handleOperator(value);
+            break;
+          case "=":
+            calculate();
+            break;
+
+          default:
+            handleNumber(value);
+        }
+      };
+      const handleNumber = (value) => {
+        currentInput = currentInput === "0" ? value : currentInput + value;
+        calculationDisplay.textContent = firstOperand ? `${firstOperand} ${operator} ${currentInput}` : currentInput;
+      };
+      const calculate = () => {
+        switch (operator) {
+          case "÷":
+            resultDisplay.textContent = firstOperand / currentInput;
+            break;
+          case "×":
+            resultDisplay.textContent = firstOperand * currentInput;
+            break;
+          case "-":
+            resultDisplay.textContent = firstOperand - currentInput;
+            break;
+          case "+":
+            resultDisplay.textContent = Number(firstOperand) + Number(currentInput);
+            break;
+        }
+      };
+      const handleOperator = (value) => {
+        // +
+        if (operator) {
+          calculate();
+        }
+        firstOperand = Number(currentInput);
+        operator = value;
+        calculationDisplay.textContent = ` ${firstOperand} ${operator}`;
+        currentInput = "0";
+      };
+      const clear = () => {
+        currentInput = "0";
+        firstOperand = null;
+        operator = null;
+        calculationDisplay.textContent = "0";
+        resultDisplay.textContent = "";
+      };
+    </script>
+  </body>
+</html>

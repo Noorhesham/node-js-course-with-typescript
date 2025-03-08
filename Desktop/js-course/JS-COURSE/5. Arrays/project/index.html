@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative To-Do List</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">To Do</div>
+      <div class="controls">
+        <div class="input-group">
+          <input type="text" id="taskInput" placeholder="Add a new task..." />
+        </div>
+        <div class="input-group">
+          <select id="taskCategory">
+            <option value="">Select category</option>
+            <option value="work">Work</option>
+            <option value="personal">Personal</option>
+            <option value="shopping">Shopping</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <input type="time" id="taskTime" />
+        </div>
+        <p id="error" class="error-message"></p>
+        <button id="addTask" onclick="addTask()">Add Task</button>
+      </div>
+      <ul id="taskList"></ul>
+      <div class="footer">Your tasks for today</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile Card Generator</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      label {
+        font-weight: bold;
+      }
+      input {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        background: #007bff;
+        color: #fff;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      .profile-card {
+        margin-top: 20px;
+        padding: 20px;
+        background: #e9f5ff;
+        border-radius: 8px;
+        text-align: center;
+      }
+      .profile-card h2 {
+        margin: 0;
+        color: #007bff;
+      }
+      .profile-card ul {
+        list-style: none;
+        padding: 0;
+      }
+      .profile-card ul li {
+        background: #fff;
+        margin: 5px;
+        padding: 5px 10px;
+        border-radius: 4px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Profile Card Generator</h1>
+      <form id="profileForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required />
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" placeholder="Enter your age" required />
+
+        <label for="hobbies">Hobbies (comma-separated):</label>
+        <input type="text" id="hobbies" placeholder="e.g. reading, coding, gaming" required />
+
+        <button type="submit">Generate Profile Card</button>
+      </form>
+
+      <div id="profileCard" class="profile-card" style="display: none">
+        <!-- Profile card content will appear here -->
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("profileForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Collect user input values
+        const name = document.getElementById("name").value.trim();
+        const ageInput = document.getElementById("age").value.trim();
+        const hobbiesInput = document.getElementById("hobbies").value.trim();
+
+        // Explicitly convert age to a number
+        const age = Number(ageInput);
+        if (Number.isNaN(age)) {
+          alert("Please enter a valid number for age.");
+          return;
+        }
+
+        // Process hobbies: split on commas, trim spaces, and filter out empties
+        //train,running,ps5,xbox series s , youtube , content creation ,programming , javascript
+        //[train,running,ps5,xbox]
+        const hobbies = hobbiesInput
+          .split(",")
+          .map((hobby) => hobby.trim())
+          .filter((hobby) => hobby !== "");
+        console.log(
+          hobbies,
+          hobbiesInput,
+          hobbies.map((hobby) => `<li>${hobby}</li>`),
+          hobbies.map((hobby) => `<li>${hobby}</li>`).join("")
+        );
+        // Create dynamic profile card content
+        const profileCard = document.getElementById("profileCard");
+        profileCard.style.display = "block";
+        profileCard.innerHTML = ` 
+        <h2>Hello, ${name}!</h2>
+        <p>You are ${age} years young.</p>
+        <h3>Your Hobbies:</h3>
+        <ul>
+          ${hobbies.map((hobby) => `<li>${hobby}</li>`).join("")}
+        </ul>
+        <p><em>${age < 18 ? "Keep dreaming big!" : "Keep conquering the world!"}</em></p>
+      `;
+      });
+    </script>
+  </body>
+</html>

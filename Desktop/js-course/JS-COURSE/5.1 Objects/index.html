@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      margin-bottom: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 5px;
+      background: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    #contacts {
+      margin-top: 20px;
+    }
+    .contact-item {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    .contact-info {
+      flex: 1;
+    }
+    .contact-actions button {
+      background: #dc3545;
+      margin-left: 10px;
+    }
+    .contact-actions button.update-btn {
+      background: #ffc107;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contact Manager</h1>
+  <div class="container">
+    <div class="form-group">
+      <label for="nameInput">Name</label>
+      <input type="text" id="nameInput" placeholder="Enter name" />
+    </div>
+    <div class="form-group">
+      <label for="phoneInput">Phone</label>
+      <input type="text" id="phoneInput" placeholder="Enter phone" />
+    </div>
+    <div class="form-group">
+      <label for="emailInput">Email</label>
+      <input type="text" id="emailInput" placeholder="Enter email" />
+    </div>
+    <button id="addContactBtn">Add Contact</button>
+
+    <hr />
+
+    <div class="form-group">
+      <label for="searchInput">Search by Name</label>
+      <input type="text" id="searchInput" placeholder="Enter name to search" />
+    </div>
+    <button id="searchBtn">Search</button>
+    <button id="showAllBtn">Show All</button>
+
+    <div id="contacts"></div>
+  </div>
+
+  <script>
+    // Array to store our contacts
+    let contacts = [];
+
+    // DOM elements
+    const nameInput = document.getElementById('nameInput');
+    const phoneInput = document.getElementById('phoneInput');
+    const emailInput = document.getElementById('emailInput');
+    const addContactBtn = document.getElementById('addContactBtn');
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const showAllBtn = document.getElementById('showAllBtn');
+    const contactsDiv = document.getElementById('contacts');
+
+    // Add a new contact (Create)
+    addContactBtn.addEventListener('click', () => {
+      const name = nameInput.value.trim();
+      const phone = phoneInput.value.trim();
+      const email = emailInput.value.trim();
+
+      if (!name) {
+        alert('Name is required!');
+        return;
+      }
+
+      // Create a contact object
+      const contact = {
+        name,
+        phone,
+        email
+      };
+
+      // Push the contact into the array
+      contacts.push(contact);
+
+      // Clear inputs
+      nameInput.value = '';
+      phoneInput.value = '';
+      emailInput.value = '';
+
+      displayContacts(contacts);
+    });
+
+    // Display contacts
+    function displayContacts(contactArray) {
+      contactsDiv.innerHTML = '';
+
+      contactArray.forEach((contact, index) => {
+        const contactItem = document.createElement('div');
+        contactItem.className = 'contact-item';
+
+        const contactInfo = document.createElement('div');
+        contactInfo.className = 'contact-info';
+        contactInfo.innerHTML = `
+          <strong>${contact.name}</strong><br>
+          Phone: ${contact.phone || 'N/A'}<br>
+          Email: ${contact.email || 'N/A'}
+        `;
+
+        const contactActions = document.createElement('div');
+        contactActions.className = 'contact-actions';
+
+        // Update button
+        const updateBtn = document.createElement('button');
+        updateBtn.textContent = 'Update';
+        updateBtn.className = 'update-btn';
+        updateBtn.addEventListener('click', () => updateContact(index));
+
+        // Delete button
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.addEventListener('click', () => deleteContact(index));
+
+        contactActions.appendChild(updateBtn);
+        contactActions.appendChild(deleteBtn);
+
+        contactItem.appendChild(contactInfo);
+        contactItem.appendChild(contactActions);
+
+        contactsDiv.appendChild(contactItem);
+      });
+    }
+
+    // Delete contact
+    function deleteContact(index) {
+      contacts.splice(index, 1);
+      displayContacts(contacts);
+    }
+
+    // Update contact
+    function updateContact(index) {
+      const newName = prompt('Enter new name:', contacts[index].name);
+      if (newName === null) return; // user pressed cancel
+
+      const newPhone = prompt('Enter new phone:', contacts[index].phone);
+      if (newPhone === null) return;
+
+      const newEmail = prompt('Enter new email:', contacts[index].email);
+      if (newEmail === null) return;
+
+      contacts[index].name = newName.trim();
+      contacts[index].phone = newPhone.trim();
+      contacts[index].email = newEmail.trim();
+
+      displayContacts(contacts);
+    }
+
+    // Search contacts
+    searchBtn.addEventListener('click', () => {
+      const query = searchInput.value.trim().toLowerCase();
+      if (!query) {
+        alert('Please enter a name to search');
+        return;
+      }
+
+      const filtered = contacts.filter(contact =>
+        contact.name.toLowerCase().includes(query)
+      );
+      displayContacts(filtered);
+    });
+
+    // Show all contacts
+    showAllBtn.addEventListener('click', () => {
+      displayContacts(contacts);
+    });
+  </script>
+</body>
+</html>

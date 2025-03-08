@@ -1,0 +1,313 @@
+:root {
+  --primary: #ff1744;
+  --primary-dark: #d50000;
+  --secondary: #212121;
+  --text: #333333;
+  --background: #fafafa;
+  --card: #ffffff;
+  --accent: #ff4081;
+  --code-bg: #1e1e1e;
+  --code-text: #e0e0e0;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Web Lines Animation */
+.web-line {
+  position: fixed;
+  width: 2px;
+  height: 100vh;
+  background: linear-gradient(to bottom, transparent, var(--primary-dark), transparent);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.web-line.left {
+  left: 15%;
+  animation: webSwing 8s ease-in-out infinite;
+}
+
+.web-line.right {
+  right: 15%;
+  animation: webSwing 8s ease-in-out infinite reverse;
+}
+
+@keyframes webSwing {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--secondary);
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: var(--primary);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.cta-button {
+  background: var(--primary);
+  color: white !important;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  transition: var(--transition);
+}
+
+.cta-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: white;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  margin-bottom: 4rem;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+/* Lecture Content */
+.lecture-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.lecture-title {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.lecture-section {
+  margin-bottom: 3rem;
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.lecture-section h2 {
+  font-size: 1.8rem;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-number {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.lecture-section p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+/* Code Blocks */
+.code-block {
+  background: var(--code-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.code-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--primary);
+}
+
+.code-block pre {
+  margin: 0;
+  color: var(--code-text);
+  font-family: "Fira Code", monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+.code-block .output {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #7cb342;
+  font-style: italic;
+}
+
+/* Spider Web Decorations */
+.spider-web {
+  position: fixed;
+  width: 150px;
+  height: 150px;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="none" stroke="rgba(255,23,68,0.1)" d="M50 0v100M0 50h100M0 0l100 100M100 0L0 100"/></svg>');
+  background-size: contain;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.spider-web.top-left {
+  top: 0;
+  left: 0;
+}
+.spider-web.top-right {
+  top: 0;
+  right: 0;
+  transform: scaleX(-1);
+}
+.spider-web.bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: scaleY(-1);
+}
+.spider-web.bottom-right {
+  bottom: 0;
+  right: 0;
+  transform: scale(-1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .lecture-title {
+    font-size: 2rem;
+  }
+
+  .lecture-section {
+    padding: 1.5rem;
+  }
+
+  .lecture-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .code-block {
+    padding: 1rem;
+  }
+
+  .web-line {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .lecture-title {
+    font-size: 1.8rem;
+  }
+
+  .lecture-section h2 {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Array Mastery</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <div class="web-line left"></div>
+    <div class="web-line right"></div>
+
+    <nav class="navbar">
+      <div class="logo">JS<span>Master</span></div>
+      <div class="nav-links">
+        <a href="#" class="active">Course Content</a>
+        <a href="#">Resources</a>
+        <a href="#">Community</a>
+        <a href="#" class="cta-button">Get Started</a>
+      </div>
+    </nav>
+
+    <main>
+      <header class="hero">
+        <h1>JavaScript Functions</h1>
+        <p>Master the Art of JavaScript Functions</p>
+      </header>
+
+      <section class="lecture-content">
+        <h1 class="lecture-title">🎓 Scoping, Anonymous Functions, and Higher-Order Functions</h1>
+
+        <div class="lecture-section">
+          <h2><span class="section-number">01.</span> Function Declarations</h2>
+          <p>
+            A function declaration defines a named function that can be invoked anywhere within its scope. This form of
+            function is hoisted, meaning it can be called before its declaration in the code.
+          </p>
+          <div class="code-block">
+            <pre>
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+console.log(greet('Alice'));</pre
+            >
+            <div class="output">Output: Hello, Alice!</div>
+          </div>
+        </div>
+
+        <div class="lecture-section">
+          <h2><span class="section-number">02.</span> Function Expressions</h2>
+          <p>
+            Function expressions involve assigning a function to a variable. Unlike function declarations, these are not
+            hoisted, so they cannot be called before they are defined.
+          </p>
+          <div class="code-block">
+            <pre>
+const greet = function(name) {
+    return `Hello, ${name}!`;
+};
+
+console.log(greet('Bob'));</pre
+            >
+            <div class="output">Output: Hello, Bob!</div>
+          </div>
+        </div>
+
+        <div class="lecture-section">
+          <h2><span class="section-number">03.</span> Anonymous Functions</h2>
+          <p>
+            Anonymous functions are functions without a name, often used in situations where a function is used only
+            once or passed as an argument to another function.
+          </p>
+          <div class="code-block">
+            <pre>
+setTimeout(function() {
+    console.log('This runs after 1 second');
+}, 1000);</pre
+            >
+          </div>
+        </div>
+
+        <div class="lecture-section">
+          <h2><span class="section-number">04.</span> Arrow Functions</h2>
+          <p>
+            Introduced in ECMAScript 2015 (ES6), arrow functions provide a concise syntax for writing functions and
+            lexically bind the this value.
+          </p>
+          <div class="code-block">
+            <pre>
+const add = (a, b) => a + b;
+
+console.log(add(2, 3));</pre
+            >
+            <div class="output">Output: 5</div>
+          </div>
+        </div>
+
+        <div class="lecture-section">
+          <h2><span class="section-number">05.</span> Higher-Order Functions</h2>
+          <p>
+            Functions that accept other functions as arguments or return functions as their result are known as
+            higher-order functions. They are a cornerstone of functional programming in JavaScript.
+          </p>
+          <div class="code-block">
+            <pre>
+function applyOperation(a, b, operation) {
+    return operation(a, b);
+}
+
+const multiply = (x, y) => x * y;
+
+console.log(applyOperation(4, 5, multiply));</pre
+            >
+            <div class="output">Output: 20</div>
+          </div>
+        </div>
+
+        <div class="lecture-section">
+          <h2><span class="section-number">06.</span> Closures</h2>
+          <p>
+            A closure occurs when a function retains access to its lexical scope, even when the function is executed
+            outside that scope. This feature enables powerful patterns like data encapsulation and function factories.
+          </p>
+          <div class="code-block">
+            <pre>
+                function counter() {
+                    let count = 0;
+                    return function() {
+                        count++;
+                        return count;
+                    };
+                }
+                
+                const increment = counter();
+                
+             
+                </pre
+            >
+            <pre>
+                console.log(increment()); <span class=" output"> // Output: 1</span>
+                console.log(increment()); <span class="output">// Output: 2</span></pre>
+          </div>
+        </div>
+        <div class="lecture-section">
+          <h2><span class="section-number">7. </span> Immediately Invoked Function Expressions (IIFE)</h2>
+          <p>
+            An IIFE is a function that is executed immediately after its creation. This pattern is often used to create
+            a new scope and avoid polluting the global namespace.
+          </p>
+          <div class="code-block">
+            <pre>
+                (function() {
+                    console.log('This function runs immediately!');
+                })();
+                
+                </pre
+            >
+            <pre>
+                console.log(increment()); <span class=" output"> // Output: 1</span>
+                console.log(increment()); <span class="output">// Output: 2</span></pre>
+          </div>
+        </div>
+        <div class="lecture-section">
+          <h2><span class="section-number">08.</span> Function Parameters and Arguments</h2>
+          <p>
+            JavaScript functions can accept parameters, and the values passed to these parameters are called arguments.
+            Functions can handle a variable number of arguments using the <code>arguments</code> object or rest
+            parameters.
+          </p>
+          <div class="code-block">
+            <pre><code>function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(sum(1, 2, 3, 4));</code></pre>
+            <div class="output">Output: 10</div>
+          </div>
+        </div>
+
+        <div class="lecture-section">
+          <h2><span class="section-number">09.</span> Default Parameters</h2>
+          <p>
+            ES6 introduced default parameters, allowing functions to have default values for parameters if no argument
+            is provided.
+          </p>
+          <div class="code-block">
+            <pre><code>function greet(name = 'Guest') {
+  return `Hello, ${name}!`;
+}
+
+console.log(greet());</code></pre>
+            <div class="output">Output: Hello, Guest!</div>
+          </div>
+        </div>
+
+        <div class="lecture-section">
+          <h2><span class="section-number">10.</span> Function Scope and Hoisting</h2>
+          <p>
+            Functions in JavaScript have their own scope, meaning variables declared within a function are not
+            accessible outside of it. Function declarations are hoisted, allowing them to be called before their
+            declaration in the code.
+          </p>
+          <div class="code-block">
+            <pre><code>console.log(square(3));
+
+function square(x) {
+  return x * x;
+}</code></pre>
+            <div class="output">Output: 9</div>
+          </div>
+        </div>
+
+        <div class="lecture-section">
+          <h2><span class="section-number">11.</span> Methods and the <code>this</code> Keyword</h2>
+          <p>
+            When a function is a property of an object, it is called a method. The value of <code>this</code> within a
+            method refers to the object it belongs to.
+          </p>
+          <div class="code-block">
+            <pre><code>const person = {
+  name: 'Charlie',
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+};
+
+person.greet();</code></pre>
+            <div class="output">Output: Hello, my name is Charlie</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="spider-web top-left"></div>
+    <div class="spider-web top-right"></div>
+    <div class="spider-web bottom-left"></div>
+    <div class="spider-web bottom-right"></div>
+  </body>
+</html>

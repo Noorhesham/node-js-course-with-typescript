@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Order Processing</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f5f5f5;
+      }
+      .container {
+        width: 50%;
+        margin: auto;
+        padding: 20px;
+        background: white;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin-top: 50px;
+      }
+      h1 {
+        color: #333;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+        transition: 0.3s;
+      }
+      .start-btn {
+        background: #28a745;
+        color: white;
+      }
+      .start-btn:hover {
+        background: #218838;
+      }
+      .orders {
+        margin-top: 20px;
+      }
+      .order-item {
+        background: #007bff;
+        color: white;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 5px;
+        display: inline-block;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🍔 Restaurant Order Processing</h1>
+      <button class="start-btn" onclick="processOrders()">Start Processing Orders</button>
+      <div class="orders" id="ordersContainer"></div>
+    </div>
+
+    <script>
+      function processOrders() {
+        let orders = ["Burger", "Pizza", "Pasta", "Salad", "Sushi"];
+        let ordersContainer = document.getElementById("ordersContainer");
+        ordersContainer.innerHTML = ""; // Clear previous orders
+
+        // For loop - Fixed number of orders
+        for (let i = 0; i < orders.length; i++) {
+          setTimeout(function () {
+            let orderDiv = document.createElement("div");
+            orderDiv.className = "order-item";
+            orderDiv.textContent = `Order ${i + 1}: ${orders[i]} ✅`;
+            ordersContainer.appendChild(orderDiv);
+          }, i * 1000);
+        }
+
+        // // While loop - Dynamic order processing
+        let extraOrders = ["Fries", "Milkshake", "Tacos"];
+        let index = 0;
+        let processExtraOrders = setInterval(function () {
+          if (index < extraOrders.length) {
+            let orderDiv = document.createElement("div");
+            orderDiv.className = "order-item";
+            orderDiv.textContent = `Extra Order: ${extraOrders[index]} ✅`;
+            ordersContainer.appendChild(orderDiv);
+            index++;
+          } else {
+            clearInterval(processExtraOrders);
+          }
+        }, 1500);
+      }
+    </script>
+  </body>
+</html>

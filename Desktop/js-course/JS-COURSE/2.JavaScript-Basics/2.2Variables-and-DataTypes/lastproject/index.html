@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Preferences Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .container {
+        max-width: 400px;
+        margin: auto;
+      }
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+      select,
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+      }
+      button {
+        margin-top: 15px;
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
+      }
+      .disabled {
+        background: gray;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>User Preferences</h2>
+
+      <label for="theme">Theme:</label>
+      <select id="theme">
+        <option value="">Select a theme</option>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select>
+
+      <label for="notifications">Enable Notifications:</label>
+      <select id="notifications">
+        <option value="">Select an option</option>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+
+      <label for="fontSize">Font Size:</label>
+      <input type="number" id="fontSize" placeholder="Enter font size" />
+
+      <button id="saveBtn" class="disabled" disabled>Save Settings</button>
+
+      <h3>Current Settings:</h3>
+      <p>Theme: <span id="currentTheme"></span></p>
+      <p>Notifications: <span id="currentNotifications"></span></p>
+      <p>Font Size: <span id="currentFontSize"></span></p>
+    </div>
+
+    <script>
+      //  select all controlled elements from the ui || html
+      const themeSelect = document.getElementById("theme");
+      const notificationsSelect = document.getElementById("notifications");
+      const fontSizeInput = document.getElementById("fontSize");
+      const saveBtn = document.getElementById("saveBtn");
+
+      //default values
+      const defaultValues = {
+        theme: localStorage.getItem("theme") || "dark",
+        notifications: localStorage.getItem("notification") || "true",
+        fontSize: localStorage.getItem("fontSize") ?? "16",
+      };
+      themeSelect.value = defaultValues.theme;
+      notificationsSelect.value = defaultValues.notifications;
+      fontSizeInput.value = defaultValues.fontSize;
+      //get the ui elements to show the output
+
+      const currentTheme = document.getElementById("currentTheme");
+      const currentNotifications = document.getElementById("currentNotifications");
+      const currentFontSize = document.getElementById("currentFontSize");
+
+      currentTheme.textContent = defaultValues.theme;
+      currentNotifications.textContent = defaultValues.notifications === "true" ? "Enabled" : "Disabled";
+      currentFontSize.textContent = defaultValues.fontSize;
+
+      function checkForm() {
+        // if (){..} else{...} ()?__:__
+
+        const isDisabled = themeSelect.value && notificationsSelect.value && fontSizeInput.value ? false : true;
+        console.log(themeSelect.value, notificationsSelect.value, fontSizeInput.value);
+        if (isDisabled) {
+          saveBtn.classList.add("disabled");
+          saveBtn.disabled = true;
+        } else {
+          saveBtn.classList.remove("disabled");
+          saveBtn.disabled = false;
+        }
+      }
+      themeSelect.addEventListener("change", checkForm);
+      notificationsSelect.addEventListener("change", checkForm);
+      fontSizeInput.addEventListener("input", checkForm);
+      saveBtn.addEventListener("click", () => {
+        localStorage.setItem("theme", themeSelect.value);
+        localStorage.setItem("notification", notificationsSelect.value);
+        localStorage.setItem("fontSize", fontSizeInput.value);
+        currentTheme.textContent = themeSelect.value;
+        currentNotifications.textContent = notificationsSelect.value === "true" ? "Enabled" : "Disabled";
+        currentFontSize.textContent = fontSizeInput.value;
+      });
+      checkForm();
+    </script>
+  </body>
+</html>

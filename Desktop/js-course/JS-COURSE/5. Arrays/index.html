@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Functions Mastery</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <div class="web-line left"></div>
+    <div class="web-line right"></div>
+
+    <nav class="navbar">
+      <div class="logo">JS<span>Master</span></div>
+      <div class="nav-links">
+        <a href="#" class="active">Course Content</a>
+        <a href="#">Resources</a>
+        <a href="#">Community</a>
+        <a href="#" class="cta-button">Get Started</a>
+      </div>
+    </nav>
+
+    <main>
+      <header class="hero">
+        <h1>JavaScript Arrays</h1>
+        <p>Master the Art of JavaScript Functions</p>
+      </header>
+
+      <section class="lecture-content">
+        <h1 class="lecture-title">🎓 JavaScript Arrays: Comprehensive Guide</h1>
+
+        <div class="lecture-section">
+          <h2><span class="section-number">01.</span> Creating and Manipulating Arrays</h2>
+          <p>
+            Arrays are like magical backpacks where you can store an ordered collection of items—whether they’re
+            numbers, strings, or even your secret superhero gadgets. In this lesson, you’ll learn how to create arrays
+            in different ways, access and modify elements, and understand the quirks and hidden secrets of arrays.
+          </p>
+          <div class="code-block">
+            <pre>
+      const fruits = ["apple", "banana", "cherry"];
+      console.log(fruits[0]); // Output: apple</pre
+            >
+            <div class="output">Output: apple</div>
+          </div>
+        </div>
+
+        <div class="lecture-section">
+          <h2><span class="section-number">02.</span> Array Methods</h2>
+          <p>
+            Array methods are your magic spells for transforming and manipulating arrays. They let you add, remove,
+            modify, and transform data in powerful ways. In this lesson, you’ll learn essential methods like
+            <code>push</code>, <code>pop</code>, <code>shift</code>, <code>unshift</code>, <code>splice</code>,
+            <code>slice</code>, <code>concat</code>, and more.
+          </p>
+          <div class="code-block">
+            <pre>
+      const numbers = [1, 2, 3];
+      numbers.push(4);
+      console.log(numbers); // Output: [1, 2, 3, 4]</pre
+            >
+            <div class="output">Output: [1, 2, 3, 4]</div>
+          </div>
+        </div>
+
+        <div class="lecture-section">
+          <h2><span class="section-number">03.</span> Advanced Array Methods</h2>
+          <p>
+            Advanced array methods take your array manipulation skills to the next level, empowering you to transform
+            data elegantly and functionally. In this lesson, we’ll dive into <code>map()</code>, <code>filter()</code>,
+            <code>reduce()</code>, and beyond.
+          </p>
+          <div class="code-block">
+            <pre>
+      const numbers = [1, 2, 3, 4, 5];
+      const doubled = numbers.map(num => num * 2);
+      console.log(doubled); // Output: [2, 4, 6, 8, 10]</pre
+            >
+            <div class="output">Output: [2, 4, 6, 8, 10]</div>
+          </div>
+        </div>
+
+        <div class="lecture-section">
+          <h2><span class="section-number">04.</span> Real-World Examples & Hidden Quirks</h2>
+          <p>
+            Arrays are used everywhere in real-world applications, from managing dynamic content on websites to
+            processing large datasets. However, they come with their own set of quirks and pitfalls that you need to be
+            aware of.
+          </p>
+          <div class="code-block">
+            <pre>
+      const sparse = [0, 1, , , 4];
+      console.log(sparse); // Output: [0, 1, <2 empty items>, 4]</pre
+            >
+            <div class="output">Output: [0, 1, &lt;2 empty items&gt;, 4]</div>
+          </div>
+        </div>
+
+        <div class="lecture-section">
+          <h2><span class="section-number">05.</span> Exercises for Arrays</h2>
+          <p>
+            Practice makes perfect! Here are some exercises to help you solidify your understanding of arrays and their
+            methods.
+          </p>
+          <div class="code-block">
+            <pre>
+      // Exercise: Create an array of superhero gadgets
+      const gadgets = ["grappling hook", "smoke bomb", "batarang"];
+      gadgets.push("laser gun");
+      console.log(gadgets); // Output: ["grappling hook", "smoke bomb", "batarang", "laser gun"]</pre
+            >
+            <div class="output">Output: ["grappling hook", "smoke bomb", "batarang", "laser gun"]</div>
+          </div>
+        </div>
+
+        <div class="lecture-section">
+          <h2><span class="section-number">06.</span> Comparison Table</h2>
+          <p>Here’s a handy comparison table to help you understand the differences between common array methods.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Operation</th>
+                <th>Returns</th>
+                <th>Modifies Original?</th>
+                <th>Use Case</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>push()</code></td>
+                <td>Add at end</td>
+                <td>New length</td>
+                <td>Yes</td>
+                <td>Adding new items to the end</td>
+              </tr>
+              <tr>
+                <td><code>pop()</code></td>
+                <td>Remove last</td>
+                <td>Removed element</td>
+                <td>Yes</td>
+                <td>Removing the last element</td>
+              </tr>
+              <tr>
+                <td><code>map()</code></td>
+                <td>Transform each element</td>
+                <td>New array</td>
+                <td>No</td>
+                <td>Data transformation</td>
+              </tr>
+              <tr>
+                <td><code>filter()</code></td>
+                <td>Filter elements based on condition</td>
+                <td>New array</td>
+                <td>No</td>
+                <td>Selective data display</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="lecture-section">
+          <h2><span class="section-number">07.</span> Interview Questions</h2>
+          <p>Prepare for your next interview with these common array-related questions.</p>
+          <ul>
+            <li>What’s the difference between <code>slice()</code> and <code>splice()</code>?</li>
+            <li>How would you add an element to the beginning of an array?</li>
+            <li>Describe a scenario where <code>join()</code> might be useful.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <div class="spider-web top-left"></div>
+    <div class="spider-web top-right"></div>
+    <div class="spider-web bottom-left"></div>
+    <div class="spider-web bottom-right"></div>
+  </body>
+</html>
