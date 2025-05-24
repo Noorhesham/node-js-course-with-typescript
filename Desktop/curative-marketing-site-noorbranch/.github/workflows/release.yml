@@ -1,0 +1,52 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Generate changelog
+        id: changelog
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { data: commits } = await github.rest.repos.compareCommits({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              base: context.payload.before,
+              head: context.sha
+            });
+            
+            const changelog = commits.commits
+              .map(commit => `- ${commit.commit.message}`)
+              .join('\n');
+            
+            return changelog;
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            ${{ steps.changelog.outputs.result }}
+          draft: false
+          prerelease: false

@@ -1,0 +1,24 @@
+/* Limit the height of the portable text (rich text) editor for eyebrow fields */
+[data-testid*="eyebrow"] [data-testid="pt-editor"] {
+  height: 5rem !important;
+}
+
+[data-testid*="heading"] [data-testid="pt-editor"] {
+  height: 7rem !important;
+}
+
+[data-testid*="field-body"] [data-ui="Box"] [data-ui="Stack"] {
+  gap: 1rem !important;
+}
+
+[data-testid*="padding"] [data-ui="Box"] [data-ui="Stack"] {
+  gap: 0.5rem !important;
+}
+
+[data-testid*="eyebrow.icon"][data-ui="Stack"][data-level="2"] {
+  gap: 0.5rem !important;
+}
+
+/* [data-ui="Tab"][data-testid*="all-fields"] {
+  display: none !important;
+} */

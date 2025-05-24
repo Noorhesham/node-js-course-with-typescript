@@ -1,0 +1,72 @@
+# Frontend related changes
+frontend:
+  - apps/web/**/*
+  - '**/**.tsx'
+  - '**/**.ts'
+  - '**/**.css'
+  - '**/**.scss'
+
+# CMS related changes
+cms:
+  - apps/studio/**/*
+  - '**/schemas/**/*'
+  - '**/sanity/**/*'
+
+# Shared components and utilities
+shared:
+  - packages/**/*
+  - libs/**/*
+
+# Content changes
+content:
+  - apps/studio/schemas/**/*
+  - apps/web/content/**/*
+  - '**/*.md'
+  - '**/*.mdx'
+
+# UI Components
+ui:
+  - apps/web/src/components/**/*
+  - apps/web/src/layouts/**/*
+
+# Data and API
+data:
+  - apps/web/src/lib/**/*
+  - apps/web/src/api/**/*
+  - apps/web/src/utils/sanity/**/*
+
+# Configuration changes
+config:
+  - '**/next.config.*'
+  - '**/sanity.config.*'
+  - '**/tailwind.config.*'
+  - .github/**/*
+  - '**/tsconfig.*'
+
+# Package dependencies
+dependencies:
+  - '**/package.json'
+  - '**/yarn.lock'
+  - '**/pnpm-lock.yaml'
+  - '**/bun.lockb'
+
+# Performance related
+performance:
+  - '**/*.perf.*'
+  - apps/web/src/utils/performance/**/*
+  - apps/web/public/**/*.webp
+  - apps/web/public/**/*.avif
+
+# SEO related
+seo:
+  - apps/web/src/app/**/head.*
+  - apps/web/src/app/**/metadata.*
+  - apps/web/public/robots.txt
+  - apps/web/public/sitemap*
+
+# Testing
+tests:
+  - '**/*.test.*'
+  - '**/*.spec.*'
+  - cypress/**/*
+  - playwright/**/*

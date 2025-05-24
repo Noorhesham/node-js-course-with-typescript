@@ -1,0 +1,43 @@
+{
+  "name": "webstacks-marketing-sites",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "postbuild": "turbo run sitemap",
+    "check": "eslint . --ext .ts,.tsx",
+    "dev": "turbo dev",
+    "start": "turbo start",
+    "lint": "turbo run lint",
+    "lint:fix": "eslint \"apps/**/*.{js,jsx,ts,tsx,mdx}\" --fix",
+    "format-and-lint:fix": "prettier --write  --loglevel silent \"apps/**/*.{js,jsx,ts,tsx,mdx}\"",
+    "typegen": "turbo run typegen",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "turbo": "^2.0.6",
+    "typescript": "^5.7.3"
+  },
+  "packageManager": "pnpm@9.6.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "echo 'Running lint-staged for TypeScript files"
+    ]
+  },
+  "dependencies": {
+    "@next/codemod": "15.0.2-canary.7",
+    "@radix-ui/react-form": "^0.1.2",
+    "@radix-ui/react-label": "^2.1.2",
+    "webstacks-marketing-sites": "file:"
+  }
+}

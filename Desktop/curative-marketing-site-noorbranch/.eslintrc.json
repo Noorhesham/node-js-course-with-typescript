@@ -1,0 +1,271 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:tailwindcss/recommended",
+    "plugin:@next/next/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "import",
+    "jsx-a11y",
+    "no-inline-styles",
+    "prefer-arrow",
+    "no-relative-import-paths",
+    "prettier"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "ignorePatterns": [
+    "next-env.d.ts",
+    "src/lib/types.ts",
+    "src/lib/sdk.ts"
+  ],
+  "rules": {
+    "curly": "error",
+    "eqeqeq": [
+      "error",
+      "smart"
+    ],
+    "no-lonely-if": "error",
+    "no-undef": "off",
+    "no-var": "error",
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "all"
+      }
+    ],
+    "arrow-body-style": [
+      "error",
+      "as-needed"
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": false
+      }
+    ],
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "prefer-arrow-callback": "error",
+    "object-shorthand": "error",
+    "no-shadow": [
+      "error",
+      {
+        "builtinGlobals": false
+      }
+    ],
+    "spaced-comment": [
+      "error",
+      "always"
+    ],
+    "no-nested-ternary": "error",
+    "array-callback-return": [
+      "error",
+      {
+        "allowImplicit": true,
+        "checkForEach": true
+      }
+    ],
+    "func-style": [
+      "error",
+      "expression"
+    ],
+    "eol-last": [
+      "error",
+      "always"
+    ],
+    "newline-before-return": "warn",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreDeclarationSort": true
+      }
+    ],
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/consistent-type-imports": "warn",
+    "@typescript-eslint/no-use-before-define": [
+      "error"
+    ],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "import/first": "error",
+    "import/default": "error",
+    "import/no-named-as-default-member": "warn",
+    "import/no-named-default": "error",
+    "import/newline-after-import": "warn",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "assets/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "atoms/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "molecules/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "components/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "utils/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "theme/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "builtin",
+          "type"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ],
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ],
+    "react/display-name": 0,
+    "react/react-in-jsx-scope": 0,
+    "react-hooks/exhaustive-deps": "off",
+    "no-relative-import-paths/no-relative-import-paths": [
+      "error",
+      {
+        "allowSameFolder": false,
+        "rootDir": "src"
+      }
+    ],
+    "react/destructuring-assignment": "error",
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [
+          ".tsx",
+          ".jsx",
+          ".mdx"
+        ]
+      }
+    ],
+    "react/require-default-props": [
+      0,
+      {
+        "forbidDefaultForRequired": true
+      }
+    ],
+    "react/no-unused-prop-types": 1,
+    "react/no-array-index-key": "warn",
+    "react/function-component-definition": [
+      "warn",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-curly-brace-presence": [
+      "error",
+      {
+        "props": "never",
+        "children": "ignore",
+        "propElementValues": "always"
+      }
+    ],
+    "prefer-arrow/prefer-arrow-functions": [
+      "warn",
+      {
+        "singleReturnOnly": true
+      }
+    ],
+    "no-inline-styles/no-inline-styles": 1,
+    "tailwindcss/no-arbitrary-value": 0,
+    "tailwindcss/classnames-order": [
+      "error",
+      {
+        "order": [
+          "customForms",
+          "typography",
+          "reducedMotion",
+          "responsive",
+          "variants",
+          "utilities"
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.mdx"
+      ],
+      "extends": "plugin:mdx/recommended"
+    }
+  ]
+}

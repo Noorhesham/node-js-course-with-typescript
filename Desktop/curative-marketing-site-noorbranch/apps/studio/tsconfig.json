@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "preserve",
+    "moduleDetection": "auto",
+    "moduleResolution": "bundler",
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "scripts/runFixNullOrdering.js"],
+  "exclude": ["node_modules"]
+}

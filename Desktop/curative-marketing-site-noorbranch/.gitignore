@@ -1,0 +1,6 @@
+# Standard turborepo gitignore
+.turbo
+node_modules
+.vercel
+
+apps/studio/schema.json

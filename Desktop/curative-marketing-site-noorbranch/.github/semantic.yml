@@ -1,0 +1,27 @@
+titleOnly: false
+commitsOnly: false
+titleAndCommits: true
+
+types:
+  - feat
+  - fix
+  - docs
+  - style
+  - refactor
+  - perf
+  - test
+  - build
+  - ci
+  - chore
+  - revert
+
+scopes:
+  - core
+  - ui
+  - api
+  - docs
+  - deps
+  - config
+
+# Validate the PR title follows the conventional commits spec
+titleFormat: ^(?:feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(?:\([^)]+\))?: .+$

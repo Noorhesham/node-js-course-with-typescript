@@ -1,0 +1,57 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "dependsOn": ["typegen", "^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**", "storybook-static/**"]
+    },
+    "build-storybook": {
+      "dependsOn": ["^build"],
+      "outputs": ["storybook-static/**"]
+    },
+    "sanity#build": {
+      "env": [
+        "SANITY_STUDIO_PROJECT_ID",
+        "SANITY_STUDIO_DATASET_DEV",
+        "SANITY_STUDIO_DATASET_PROD",
+        "SANITY_STUDIO_API_VERSION",
+        "MARKETING_SANITY_API_READ_TOKEN",
+        "MARKETING_SANITY_API_WRITE_TOKEN"
+      ]
+    },
+    "ci:build": {
+      "dependsOn": ["^ci:build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"]
+    },
+    "ci:build-deploy:preview": {
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "env": ["VERCEL_DEPLOYMENT_ALIAS_SANITY", "VERCEL_DEPLOYMENT_ALIAS_NEXT"]
+    },
+    "ci:build-deploy:staging": {
+      "inputs": ["$TURBO_DEFAULT$", ".env*"]
+    },
+    "ci:build-deploy:prod": {
+      "inputs": ["$TURBO_DEFAULT$", ".env*"]
+    },
+    "typegen": {
+      "dependsOn": ["^typegen"],
+      "inputs": ["$TURBO_DEFAULT$", "schemas/**"],
+      "outputs": ["sanity.types.ts"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "inputs": ["$TURBO_DEFAULT$", ".env*"]
+    },
+    "start": {
+      "inputs": ["$TURBO_DEFAULT$", ".env*"]
+    },
+    "lint": {
+      "cache": false
+    },
+    "sitemap": {
+      "inputs": ["$TURBO_DEFAULT$", ".env*"]
+    }
+  }
+}

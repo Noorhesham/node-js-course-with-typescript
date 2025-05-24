@@ -1,0 +1,25 @@
+branches:
+  - name: main
+    protection:
+      required_status_checks:
+        strict: true
+        contexts:
+          - "Vercel"
+          - "TypeScript"
+      enforce_admins: true
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: true
+      restrictions: null
+
+  - name: staging
+    protection:
+      required_status_checks:
+        strict: true
+        contexts:
+          - "Vercel"
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        dismiss_stale_reviews: true
+      restrictions: null

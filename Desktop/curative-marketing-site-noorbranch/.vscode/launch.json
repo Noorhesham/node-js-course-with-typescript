@@ -1,0 +1,223 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [],
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 24,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.snippetSuggestions": "top",
+  "editor.wordBasedSuggestions": "off",
+  "editor.matchBrackets": "never",
+  "editor.wordWrapColumn": 1,
+  "editor.accessibilitySupport": "off",
+  "editor.stickyScroll.enabled": true,
+  "[yaml]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[html]": {
+    "editor.defaultFormatter": "HookyQR.beautify",
+    "editor.suggest.insertMode": "replace",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "html.format.wrapLineLength": 160,
+  "html.format.wrapAttributes": "force-expand-multiline",
+  "[python]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.maxTokenizationLineLength": 20000,
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnType": true
+  },
+  "python.formatting.provider": "autopep8",
+  "python.formatting.autopep8Args": [
+    "--max-line-length=2000"
+  ],
+  "python.languageServer": "Pylance",
+  "python.showStartPage": false,
+  "[php]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "php.suggest.basic": false,
+  "php.validate.enable": true,
+  "php.validate.run": "onType",
+  "[scss]": {
+    "editor.suggest.insertMode": "replace",
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "michelemelluso.code-beautifier"
+  },
+  "[javascript]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "javascript.suggest.completeJSDocs": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.format.enable": true,
+  "[typescript]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.format.enable": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jupyter]": {},
+  "[ruby]": {},
+  "[xml]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "DotJoshJohnson.xml"
+  },
+  "[vue]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "octref.vetur",
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "kite.showWelcomeNotificationOnStartup": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "lingua.defaultLanguage": "en",
+  "omnisharp.path": "latest",
+  "workbench.tree.indent": 12,
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "blade": "html",
+    "javascript": "jsx",
+    "django-html": "html"
+  },
+  "prettier.trailingComma": "none",
+  "prettier.singleQuote": true,
+  "scss.showErrors": true,
+  "beautify.options": {
+    "indent_size": 4,
+    "indent_with_tabs": true
+  },
+  "debug.javascript.autoAttachFilter": "disabled",
+  "dart.lineLength": 2000,
+  "editor.mouseWheelScrollSensitivity": 6,
+  "files.associations": {
+    "*.erb": "erb",
+    "*.html": "html"
+  },
+  "solargraph.autoformat": true,
+  "solargraph.diagnostics": true,
+  "solargraph.formatting": true,
+  "vscode-erb-beautify.tabStops": 4,
+  "vscode-erb-beautify.tab": true,
+  "liquid.format": true,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+  "php-cs-fixer.lastDownload": 1658504115847,
+  "workbench.iconTheme": "material-icon-theme",
+  "blade.format.enable": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.linkedEditing": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "terminal.explorerKind": "external",
+  "terminal.integrated.fontFamily": "'Dank Mono', 'Courier New', Consolas, monospace",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight": 1.1,
+  "workbench.colorTheme": "One Dark Pro",
+  "security.workspace.trust.untrustedFiles": "open",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "terminal.external.windowsExec": "wt",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  //   Eslint
+  "eslint.alwaysShowStatus": true,
+  "eslint.options": {
+    "extensions": [
+      ".html",
+      ".js",
+      ".vue",
+      ".jsx",
+      ".ts",
+      ".tsx"
+    ]
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.largeFileOptimizations": false,
+  "react-native-tools.showUserTips": false,
+  "editor.foldingMaximumRegions": 50000,
+  "tabnine.experimentalAutoImports": true,
+  "editor.minimap.enabled": false,
+  "redhat.telemetry.enabled": false,
+  "explorer.confirmPasteNative": false
+}

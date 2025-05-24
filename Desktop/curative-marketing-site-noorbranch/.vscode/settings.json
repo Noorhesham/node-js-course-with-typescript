@@ -1,0 +1,26 @@
+{
+  "editor.defaultFormatter": "biomejs.biome",
+  "biome.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "explicit",
+    "quickFix.biome": "explicit",
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": ["javascript"],
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "prettier.enable": false,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
+}

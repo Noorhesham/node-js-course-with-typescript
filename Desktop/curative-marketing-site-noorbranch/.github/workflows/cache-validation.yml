@@ -1,0 +1,43 @@
+name: Cache Validation
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Run every 6 hours
+  workflow_dispatch:
+
+jobs:
+  validate-cache:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate Sanity Cache
+        env:
+          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
+        run: |
+          cd apps/web
+          npm run validate-cache
+
+      - name: Create Issue on Cache Mismatch
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '🚨 Content Cache Mismatch Detected',
+              body: 'The content cache validation check has failed. This might indicate that the cached content is out of sync with Sanity.',
+              labels: ['content', 'bug', 'high-priority']
+            })

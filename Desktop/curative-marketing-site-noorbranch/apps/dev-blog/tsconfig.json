@@ -1,0 +1,53 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"],
+      "@client": ["../client.ts"],
+      "@molecules/*": ["components/molecules/*"],
+      "@components/*": ["components/*"],
+      "@primatives/*": ["components/primatives/*"],
+      "@patterns/*": ["components/patterns/*"],
+      "@modules/*": ["components/modules/*"],
+      "@sections/*": ["components/sections/*"],
+      "@contexts/*": ["contexts/*"],
+      "@utils/*": ["utils/*"],
+      "@hooks/*": ["hooks/*"],
+      "@lib/*": ["lib/*"]
+    },
+    "strict": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "**/*.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

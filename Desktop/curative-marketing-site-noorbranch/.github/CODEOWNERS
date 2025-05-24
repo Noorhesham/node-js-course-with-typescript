@@ -1,0 +1,18 @@
+# These owners will be the default owners for everything in
+# the repo. Unless a later match takes precedence,
+# they will be requested for review when someone opens a pull request.
+*       @gowebstacks/core-team
+
+# Apps directory
+/apps/web/  @gowebstacks/frontend-team
+
+# Backend related files
+/apps/api/  @gowebstacks/backend-team
+
+# Configuration files
+*.json      @gowebstacks/devops-team
+*.yml       @gowebstacks/devops-team
+*.yaml      @gowebstacks/devops-team
+
+# Documentation
+/docs/      @gowebstacks/tech-writers @gowebstacks/core-team

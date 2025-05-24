@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "apis": [
+    {
+      "identifier": "wistia",
+      "source": "@wistia/v1.0#dl334lw7lyq0e",
+      "integrity": "sha512-T8XvQq/J/qX0KxIWUWWsGz5wx5vftruZNBu70L7hjiziWieHtK/jrh+0XlJqhUJvtdGhqgCYP/Cl4roIZQcBjg==",
+      "installerVersion": "6.1.1"
+    }
+  ]
+}
